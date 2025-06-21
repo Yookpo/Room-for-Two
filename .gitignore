@@ -1,0 +1,29 @@
+# 빌드 결과물
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.lib
+*.exp
+*.dll
+
+# 빌드 디렉토리
+/Debug/
+/Release/
+/x64/
+
+# Visual Studio 전용 설정
+.vs/
+*.suo
+*.user
+*.vcxproj.user
+*.VC.db
+
+# CMake 캐시 등
+CMakeFiles/
+CMakeCache.txt
+
+# 로그, 임시파일
+*.log
+*.tmp
+*.bak
