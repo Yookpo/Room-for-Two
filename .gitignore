@@ -1,29 +1,63 @@
-# 빌드 결과물
-*.obj
-*.exe
-*.pdb
-*.ilk
-*.lib
-*.exp
+# ---------------------------------------
+# Build results
+# ---------------------------------------
+[Bb]in/
+[Oo]bj/
 *.dll
+*.exe
+*.lib
+*.pdb
+*.exp
+*.ilk
 
-# 빌드 디렉토리
-/Debug/
-/Release/
-/x64/
+# ---------------------------------------
+# Build directories
+# ---------------------------------------
+x64/
+x86/
+Debug*/
+Release*/
+build/
 
-# Visual Studio 전용 설정
+# ---------------------------------------
+# Visual Studio-specific files
+# ---------------------------------------
 .vs/
 *.suo
 *.user
-*.vcxproj.user
+*.userosscache
+*.sln.docstates
 *.VC.db
+*.VC.VC.opendb
+*.opensdf
+*.cache
 
-# CMake 캐시 등
-CMakeFiles/
-CMakeCache.txt
-
-# 로그, 임시파일
+# ---------------------------------------
+# Project-specific files
+# ---------------------------------------
 *.log
+*.tlog
 *.tmp
 *.bak
+
+# ---------------------------------------
+# CMake files (if using CMake)
+# ---------------------------------------
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# ---------------------------------------
+# Other common ignores
+# ---------------------------------------
+*.ipch
+*.iobj
+*.ipdb
+*.idb
+*.ncb
+*.aps
+
+# Ignore Unity-generated meta files (if Unity + Visual Studio)
+*.csproj
+*.sln
