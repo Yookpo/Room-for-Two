@@ -4,5 +4,5 @@
 
 int main()
 {
-	std::cout << "Test입니다.\n";
+	std::cout << "Eom입니다.\n";
 }
