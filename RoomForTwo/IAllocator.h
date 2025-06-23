@@ -1,4 +1,4 @@
-//ÀÌ Å¬·¡½º´Â allocator ÀÎÅÍÆäÀÌ½º ÄÚµå
+ï»¿//ì´ í´ë˜ìŠ¤ëŠ” allocator ì¸í„°í˜ì´ìŠ¤ ì½”ë“œ
 #pragma once
 
 #include <cstddef>	// size_t
@@ -8,7 +8,7 @@ class IAllocator
 public:
 	virtual ~IAllocator() = default;
 
-	// alignment: ¸Ş¸ğ¸® Á¤·Ä °ª. SIMD °°Àº ÃÖÀûÈ­¸¦ À§ÇØ Æ¯Á¤ ÁÖ¼Ò ¹è¼ö¿¡ ¸ÂÃç ÇÒ´ç
+	// alignment: ë©”ëª¨ë¦¬ ì •ë ¬ ê°’. SIMD ê°™ì€ ìµœì í™”ë¥¼ ìœ„í•´ íŠ¹ì • ì£¼ì†Œ ë°°ìˆ˜ì— ë§ì¶° í• ë‹¹
 	virtual void* Allocate(size_t size, size_t alignment = alignof(void*)) = 0;
 
 	virtual void Deallocate(void* p) = 0;

@@ -1,8 +1,8 @@
-#pragma once
+ï»¿#pragma once
 
 #include "IAllocator.h"
 #include <iostream>
-#include <new> // std::align_val_t (c++17ÀÌ»ó)
+#include <new> // std::align_val_t (c++17ì´ìƒ)
 
 class StandardAllocator : public IAllocator
 {
@@ -10,11 +10,11 @@ class StandardAllocator : public IAllocator
 
 	~StandardAllocator() override = default;
 
-	// size			ÇÒ´çÇÒ ¸Ş¸ğ¸®ÀÇ ¹ÙÀÌÆ® Å©±â
-	// alignment	¿äÃ»ÇÏ´Â ¸Ş¸ğ¸® Á¤·Ä °ª
-	// return		ÇÒ´çµÈ ¸Ş¸ğ¸®¸¦ °¡¸®Å°´Â Æ÷ÀÎÅÍ
+	// size			í• ë‹¹í•  ë©”ëª¨ë¦¬ì˜ ë°”ì´íŠ¸ í¬ê¸°
+	// alignment	ìš”ì²­í•˜ëŠ” ë©”ëª¨ë¦¬ ì •ë ¬ ê°’
+	// return		í• ë‹¹ëœ ë©”ëª¨ë¦¬ë¥¼ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°
 	void* Allocate(size_t size, size_t alignment) override;
 
-	// p			ÇØÁ¦ÇÒ ¸Ş¸ğ¸®¸¦ °¡¸®Å°´Â Æ÷ÀÎÅÍ
+	// p			í•´ì œí•  ë©”ëª¨ë¦¬ë¥¼ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°
 	void Deallocate(void* p) override;
 };

@@ -1,8 +1,8 @@
-#include "StandardAllocator.h"
+ï»¿#include "StandardAllocator.h"
 
 void* StandardAllocator::Allocate(size_t size, size_t alignment)
 {
-	// c++17ºÎÅÍ ¾²´Â Á¤·Ä ÇÒ´ç(aligned allocation)
+	// c++17ë¶€í„° ì“°ëŠ” ì •ë ¬ í• ë‹¹(aligned allocation)
 	return ::operator new(size, std::align_val_t{ alignment });
 }
 
