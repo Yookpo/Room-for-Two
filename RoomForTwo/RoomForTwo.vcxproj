@@ -130,6 +130,7 @@
   <ItemGroup>
     <ClCompile Include="IAllocator.cpp" />
     <ClCompile Include="StandardAllocator.cpp" />
+    <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
