@@ -60,4 +60,4 @@ Makefile
 
 # Ignore Unity-generated meta files (if Unity + Visual Studio)
 *.csproj
-*.sln
+#*.sln
