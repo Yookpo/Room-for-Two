@@ -1,0 +1,7 @@
+<map id="StandardAllocator::Reallocate" name="StandardAllocator::Reallocate">
+<area shape="rect" id="Node000001" title="할당된 메모리의 크기를 변경합니다." alt="" coords="5,39,138,81"/>
+<area shape="rect" id="Node000002" href="$class_standard_allocator.html#a35c5a4ca31462027a9e93b56a039c434" title=" " alt="" coords="186,5,318,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,45,170,39,171,44,138,50"/>
+<area shape="rect" id="Node000003" href="$class_standard_allocator.html#a277672a86f83700e4ad0067a3f4e83d8" title=" " alt="" coords="186,72,318,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="138,70,171,76,170,81,137,75"/>
+</map>

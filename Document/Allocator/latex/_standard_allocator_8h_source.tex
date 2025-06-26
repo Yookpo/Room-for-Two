@@ -1,0 +1,43 @@
+\doxysection{Standard\+Allocator.\+h}
+\hypertarget{_standard_allocator_8h_source}{}\label{_standard_allocator_8h_source}\index{C:/Users/Diguedman/source/repos/Room-\/for-\/Two/Room-\/For-\/Two/Allocator/StandardAllocator.h@{C:/Users/Diguedman/source/repos/Room-\/for-\/Two/Room-\/For-\/Two/Allocator/StandardAllocator.h}}
+\mbox{\hyperlink{_standard_allocator_8h}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_allocator_8h}{IAllocator.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00006}\mbox{\hyperlink{class_standard_allocator}{00006}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_standard_allocator_ab06c411585d3500d374a64416231282a}{StandardAllocator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_allocator}{IAllocator}}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00008}00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00009}\mbox{\hyperlink{class_standard_allocator_ab06c411585d3500d374a64416231282a}{00009}}\ \ \ \ \ \mbox{\hyperlink{class_standard_allocator_ab06c411585d3500d374a64416231282a}{StandardAllocator}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00010}\mbox{\hyperlink{class_standard_allocator_a188ea6e72fd4e9ffdec21f2981ff343d}{00010}}\ \ \ \ \ \mbox{\hyperlink{class_standard_allocator_a188ea6e72fd4e9ffdec21f2981ff343d}{\string~StandardAllocator}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00012}00012\ \ \ \ \ \textcolor{comment}{//\ 복사\ 대입\ 금지}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00013}\mbox{\hyperlink{class_standard_allocator_a368204a4c5096b38d789a43df3369734}{00013}}\ \ \ \ \ \mbox{\hyperlink{class_standard_allocator_a368204a4c5096b38d789a43df3369734}{StandardAllocator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_standard_allocator_ab06c411585d3500d374a64416231282a}{StandardAllocator}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00014}\mbox{\hyperlink{class_standard_allocator_a8b53c3e6f81ea1db7050194cdb2ac003}{00014}}\ \ \ \ \ \mbox{\hyperlink{class_standard_allocator_ab06c411585d3500d374a64416231282a}{StandardAllocator}}\&\ \mbox{\hyperlink{class_standard_allocator_a8b53c3e6f81ea1db7050194cdb2ac003}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_standard_allocator_ab06c411585d3500d374a64416231282a}{StandardAllocator}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{class_standard_allocator_a35c5a4ca31462027a9e93b56a039c434}{Allocate}}(}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ alignment\ =\ \textcolor{keyword}{alignof}(\textcolor{keywordtype}{void}*),}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ debugName\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_standard_allocator_a277672a86f83700e4ad0067a3f4e83d8}{Deallocate}}(\textcolor{keywordtype}{void}*\ p,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ alignmnet)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{class_standard_allocator_a46d9b1015acfd3ba312781f0b447aa44}{Reallocate}}(}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ p,\ \textcolor{keywordtype}{size\_t}\ oldSize,\ \textcolor{keywordtype}{size\_t}\ newSize,}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ alignment\ =\ \textcolor{keyword}{alignof}(\textcolor{keywordtype}{void}*),}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ debugName\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_standard_allocator_a9721f235fad99912d486b81239176fdf}{GetTotalAllocatedBytes}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_standard_allocator_a1f06c5f5cbfcc6c40f02a5a9d6d27cb0}{GetLiveAllocationCount}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_standard_allocator_a13f0f15550511f1a69c3a853bd2865b6}{Owns}}(\textcolor{keywordtype}{void}*\ p)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00042}00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ const\ 함수에서\ 뮤텍스를\ 잠그기\ 위해\ mutable\ 사용}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00044}\mbox{\hyperlink{class_standard_allocator_a9c7ed7811cae2a889134b4543f913e94}{00044}}\ \ \ \ \ \textcolor{keyword}{mutable}\ std::mutex\ \mbox{\hyperlink{class_standard_allocator_a9c7ed7811cae2a889134b4543f913e94}{Mutex}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 스레드\ 안정성을\ 위한\ 뮤텍스}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00045}\mbox{\hyperlink{class_standard_allocator_a5045af9733ab1f78fbb8ea5eb16e6ea2}{00045}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_standard_allocator_a5045af9733ab1f78fbb8ea5eb16e6ea2}{AllocatedSize}}\ =\ 0;\ \ \textcolor{comment}{//\ 총\ 할당된\ 바이트\ 수}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00046}\mbox{\hyperlink{class_standard_allocator_a9edcb19d91ca0994eb57892d86b47476}{00046}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_standard_allocator_a9edcb19d91ca0994eb57892d86b47476}{AllocationCount}}\ =\ 0;\ \textcolor{comment}{//\ 현재\ 할당된\ 블록\ 수}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8h_source_l00047}00047\ \};}
+
+\end{DoxyCode}

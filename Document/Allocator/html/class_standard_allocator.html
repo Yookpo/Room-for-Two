@@ -1,0 +1,757 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Allocator: StandardAllocator 클래스 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Allocator<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','검색',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_standard_allocator.html','','class_standard_allocator-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">StandardAllocator 클래스 참조</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_standard_allocator_8h_source.html">StandardAllocator.h</a>&gt;</code></p>
+<div class="dynheader">
+StandardAllocator에 대한 상속 다이어그램 : </div>
+<div class="dyncontent">
+<div class="center"><img src="class_standard_allocator__inherit__graph.png" border="0" usemap="#a_standard_allocator_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_standard_allocator_inherit__map" id="a_standard_allocator_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,251,174,555"/>
+<area shape="rect" href="class_i_allocator.html" title=" " alt="" coords="5,5,174,203"/>
+<area shape="poly" title=" " alt="" coords="92,218,92,251,87,251,87,218"/>
+</map>
+</div>
+<div class="dynheader">
+StandardAllocator에 대한 협력 다이어그램:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_standard_allocator__coll__graph.png" border="0" usemap="#a_standard_allocator_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_standard_allocator_coll__map" id="a_standard_allocator_coll__map">
+<area shape="rect" title=" " alt="" coords="5,251,174,555"/>
+<area shape="rect" href="class_i_allocator.html" title=" " alt="" coords="5,5,174,203"/>
+<area shape="poly" title=" " alt="" coords="92,218,92,251,87,251,87,218"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 멤버 함수</h2></td></tr>
+<tr class="memitem:ab06c411585d3500d374a64416231282a" id="r_ab06c411585d3500d374a64416231282a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab06c411585d3500d374a64416231282a">StandardAllocator</a> ()=default</td></tr>
+<tr class="memitem:a188ea6e72fd4e9ffdec21f2981ff343d" id="r_a188ea6e72fd4e9ffdec21f2981ff343d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a188ea6e72fd4e9ffdec21f2981ff343d">~StandardAllocator</a> () override=default</td></tr>
+<tr class="memitem:a368204a4c5096b38d789a43df3369734" id="r_a368204a4c5096b38d789a43df3369734"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a368204a4c5096b38d789a43df3369734">StandardAllocator</a> (const <a class="el" href="class_standard_allocator.html">StandardAllocator</a> &amp;)=delete</td></tr>
+<tr class="memitem:a8b53c3e6f81ea1db7050194cdb2ac003" id="r_a8b53c3e6f81ea1db7050194cdb2ac003"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_standard_allocator.html">StandardAllocator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b53c3e6f81ea1db7050194cdb2ac003">operator=</a> (const <a class="el" href="class_standard_allocator.html">StandardAllocator</a> &amp;)=delete</td></tr>
+<tr class="memitem:a35c5a4ca31462027a9e93b56a039c434" id="r_a35c5a4ca31462027a9e93b56a039c434"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35c5a4ca31462027a9e93b56a039c434">Allocate</a> (size_t size, size_t alignment=alignof(void *), const char *debugName=nullptr) override</td></tr>
+<tr class="memitem:a277672a86f83700e4ad0067a3f4e83d8" id="r_a277672a86f83700e4ad0067a3f4e83d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a277672a86f83700e4ad0067a3f4e83d8">Deallocate</a> (void *p, size_t size, size_t alignmnet) override</td></tr>
+<tr class="memitem:a46d9b1015acfd3ba312781f0b447aa44" id="r_a46d9b1015acfd3ba312781f0b447aa44"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46d9b1015acfd3ba312781f0b447aa44">Reallocate</a> (void *p, size_t oldSize, size_t newSize, size_t alignment=alignof(void *), const char *debugName=nullptr) override</td></tr>
+<tr class="memdesc:a46d9b1015acfd3ba312781f0b447aa44"><td class="mdescLeft">&#160;</td><td class="mdescRight">할당된 메모리의 크기를 변경합니다.  <br /></td></tr>
+<tr class="memitem:a9721f235fad99912d486b81239176fdf" id="r_a9721f235fad99912d486b81239176fdf"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9721f235fad99912d486b81239176fdf">GetTotalAllocatedBytes</a> () const override</td></tr>
+<tr class="memitem:a1f06c5f5cbfcc6c40f02a5a9d6d27cb0" id="r_a1f06c5f5cbfcc6c40f02a5a9d6d27cb0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f06c5f5cbfcc6c40f02a5a9d6d27cb0">GetLiveAllocationCount</a> () const override</td></tr>
+<tr class="memitem:a13f0f15550511f1a69c3a853bd2865b6" id="r_a13f0f15550511f1a69c3a853bd2865b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13f0f15550511f1a69c3a853bd2865b6">Owns</a> (void *p) const override</td></tr>
+<tr class="memdesc:a13f0f15550511f1a69c3a853bd2865b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">이 할당기가 해당 메모리 블록을 소유하고 있는지 확인합니다.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 속성</h2></td></tr>
+<tr class="memitem:a9c7ed7811cae2a889134b4543f913e94" id="r_a9c7ed7811cae2a889134b4543f913e94"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c7ed7811cae2a889134b4543f913e94">Mutex</a></td></tr>
+<tr class="memitem:a5045af9733ab1f78fbb8ea5eb16e6ea2" id="r_a5045af9733ab1f78fbb8ea5eb16e6ea2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5045af9733ab1f78fbb8ea5eb16e6ea2">AllocatedSize</a> = 0</td></tr>
+<tr class="memitem:a9edcb19d91ca0994eb57892d86b47476" id="r_a9edcb19d91ca0994eb57892d86b47476"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9edcb19d91ca0994eb57892d86b47476">AllocationCount</a> = 0</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">상세한 설명</h2>
+<div class="textblock">
+<p class="definition"><a class="el" href="_standard_allocator_8h_source.html">StandardAllocator.h</a> 파일의 <a class="el" href="_standard_allocator_8h_source.html#l00006">6</a> 번째 라인에서 정의되었습니다.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">생성자 &amp; 소멸자 문서화</h2>
+<a id="ab06c411585d3500d374a64416231282a" name="ab06c411585d3500d374a64416231282a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab06c411585d3500d374a64416231282a">&#9670;&#160;</a></span>StandardAllocator() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">StandardAllocator::StandardAllocator </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_standard_allocator_ab06c411585d3500d374a64416231282a_icgraph.png" border="0" usemap="#aclass_standard_allocator_ab06c411585d3500d374a64416231282a_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_standard_allocator_ab06c411585d3500d374a64416231282a_icgraph" id="aclass_standard_allocator_ab06c411585d3500d374a64416231282a_icgraph">
+<area shape="rect" title=" " alt="" coords="186,39,318,81"/>
+<area shape="rect" href="class_standard_allocator.html#a8b53c3e6f81ea1db7050194cdb2ac003" title=" " alt="" coords="5,5,138,48"/>
+<area shape="poly" title=" " alt="" coords="170,48,137,42,138,36,171,42"/>
+<area shape="rect" href="class_standard_allocator.html#a368204a4c5096b38d789a43df3369734" title=" " alt="" coords="5,72,138,115"/>
+<area shape="poly" title=" " alt="" coords="171,78,138,84,137,78,170,72"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a188ea6e72fd4e9ffdec21f2981ff343d" name="a188ea6e72fd4e9ffdec21f2981ff343d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a188ea6e72fd4e9ffdec21f2981ff343d">&#9670;&#160;</a></span>~StandardAllocator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">StandardAllocator::~StandardAllocator </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a368204a4c5096b38d789a43df3369734" name="a368204a4c5096b38d789a43df3369734"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a368204a4c5096b38d789a43df3369734">&#9670;&#160;</a></span>StandardAllocator() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">StandardAllocator::StandardAllocator </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_standard_allocator.html">StandardAllocator</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_standard_allocator_a368204a4c5096b38d789a43df3369734_cgraph.png" border="0" usemap="#aclass_standard_allocator_a368204a4c5096b38d789a43df3369734_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_standard_allocator_a368204a4c5096b38d789a43df3369734_cgraph" id="aclass_standard_allocator_a368204a4c5096b38d789a43df3369734_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,138,48"/>
+<area shape="rect" href="class_standard_allocator.html#ab06c411585d3500d374a64416231282a" title=" " alt="" coords="186,5,318,48"/>
+<area shape="poly" title=" " alt="" coords="138,24,170,24,170,29,138,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">멤버 함수 문서화</h2>
+<a id="a35c5a4ca31462027a9e93b56a039c434" name="a35c5a4ca31462027a9e93b56a039c434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35c5a4ca31462027a9e93b56a039c434">&#9670;&#160;</a></span>Allocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * StandardAllocator::Allocate </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>alignment</em></span><span class="paramdefsep"> = </span><span class="paramdefval">alignof(void*)</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>debugName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>매개변수</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>할당할 메모리 크기 (바이트) </td></tr>
+    <tr><td class="paramname">alignment</td><td>정렬 바이트 (기본: 포인터 정렬) </td></tr>
+    <tr><td class="paramname">debugName</td><td>디버깅용 태그 이름 (선택적) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>반환값</dt><dd>void* 할당된 메모리 포인터 (실패 시 nullptr 반환) </dd></dl>
+
+<p><a class="el" href="class_i_allocator.html#afd47f4216eb6f7860f77c6bd4e9dd462">IAllocator</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="_standard_allocator_8cpp_source.html">StandardAllocator.cpp</a> 파일의 <a class="el" href="_standard_allocator_8cpp_source.html#l00007">7</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>{</div>
+<div class="line"><span class="lineno">    9</span>    <span class="keywordtype">void</span>* ptr = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   10</span> </div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   12</span>    {</div>
+<div class="line"><span class="lineno">   13</span>        ptr = ::operator <span class="keyword">new</span>(size, std::align_val_t(alignment));</div>
+<div class="line"><span class="lineno">   14</span>    }</div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::bad_alloc&amp;)</div>
+<div class="line"><span class="lineno">   16</span>    {</div>
+<div class="line"><span class="lineno">   17</span><span class="preprocessor">#ifdef _DEBUG</span></div>
+<div class="line"><span class="lineno">   18</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;[StandardAllocator::Allocator] FAILED to allocate : &quot;</span></div>
+<div class="line"><span class="lineno">   19</span>                  &lt;&lt; size &lt;&lt; <span class="stringliteral">&quot; bytes&quot;</span></div>
+<div class="line"><span class="lineno">   20</span>                  &lt;&lt; (debugName ? <span class="stringliteral">&quot; for &quot;</span> : <span class="stringliteral">&quot;&quot;</span>) &lt;&lt; (debugName ? debugName : <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">   21</span>                  &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   22</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   24</span>    }</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    <span class="comment">// 추적 정보 갱신</span></div>
+<div class="line"><span class="lineno">   27</span>    {</div>
+<div class="line"><span class="lineno">   28</span>        std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="#a9c7ed7811cae2a889134b4543f913e94">Mutex</a>);</div>
+<div class="line"><span class="lineno">   29</span>        <a class="code hl_variable" href="#a5045af9733ab1f78fbb8ea5eb16e6ea2">AllocatedSize</a> += size;</div>
+<div class="line"><span class="lineno">   30</span>        <a class="code hl_variable" href="#a9edcb19d91ca0994eb57892d86b47476">AllocationCount</a>++;</div>
+<div class="line"><span class="lineno">   31</span>    }</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span><span class="preprocessor">#ifdef _DEBUG</span></div>
+<div class="line"><span class="lineno">   34</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;[StandatdAllocator::Allocator] &quot;</span></div>
+<div class="line"><span class="lineno">   35</span>              &lt;&lt; (debugName ? debugName : <span class="stringliteral">&quot;Unnamed&quot;</span>)</div>
+<div class="line"><span class="lineno">   36</span>              &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; size &lt;&lt; <span class="stringliteral">&quot; bytes, align &quot;</span> &lt;&lt; alignment</div>
+<div class="line"><span class="lineno">   37</span>              &lt;&lt; <span class="stringliteral">&quot;) -&gt; &quot;</span> &lt;&lt; ptr &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   38</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> ptr;</div>
+<div class="line"><span class="lineno">   41</span>}</div>
+<div class="ttc" id="aclass_standard_allocator_html_a5045af9733ab1f78fbb8ea5eb16e6ea2"><div class="ttname"><a href="#a5045af9733ab1f78fbb8ea5eb16e6ea2">StandardAllocator::AllocatedSize</a></div><div class="ttdeci">size_t AllocatedSize</div><div class="ttdef"><b>Definition</b> <a href="_standard_allocator_8h_source.html#l00045">StandardAllocator.h:45</a></div></div>
+<div class="ttc" id="aclass_standard_allocator_html_a9c7ed7811cae2a889134b4543f913e94"><div class="ttname"><a href="#a9c7ed7811cae2a889134b4543f913e94">StandardAllocator::Mutex</a></div><div class="ttdeci">std::mutex Mutex</div><div class="ttdef"><b>Definition</b> <a href="_standard_allocator_8h_source.html#l00044">StandardAllocator.h:44</a></div></div>
+<div class="ttc" id="aclass_standard_allocator_html_a9edcb19d91ca0994eb57892d86b47476"><div class="ttname"><a href="#a9edcb19d91ca0994eb57892d86b47476">StandardAllocator::AllocationCount</a></div><div class="ttdeci">size_t AllocationCount</div><div class="ttdef"><b>Definition</b> <a href="_standard_allocator_8h_source.html#l00046">StandardAllocator.h:46</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_standard_allocator_a35c5a4ca31462027a9e93b56a039c434_icgraph.png" border="0" usemap="#aclass_standard_allocator_a35c5a4ca31462027a9e93b56a039c434_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_standard_allocator_a35c5a4ca31462027a9e93b56a039c434_icgraph" id="aclass_standard_allocator_a35c5a4ca31462027a9e93b56a039c434_icgraph">
+<area shape="rect" title=" " alt="" coords="186,5,318,48"/>
+<area shape="rect" href="class_standard_allocator.html#a46d9b1015acfd3ba312781f0b447aa44" title="할당된 메모리의 크기를 변경합니다." alt="" coords="5,5,138,48"/>
+<area shape="poly" title=" " alt="" coords="170,29,138,29,138,24,170,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a277672a86f83700e4ad0067a3f4e83d8" name="a277672a86f83700e4ad0067a3f4e83d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a277672a86f83700e4ad0067a3f4e83d8">&#9670;&#160;</a></span>Deallocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StandardAllocator::Deallocate </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>alignmnet</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>매개변수</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>해제할 메모리 포인터 </td></tr>
+    <tr><td class="paramname">size</td><td>해제할 메모리 크기 (할당 시 사용된 값) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="class_i_allocator.html#a684bfd0e68bf6a63217893acde5d66bb">IAllocator</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="_standard_allocator_8cpp_source.html">StandardAllocator.cpp</a> 파일의 <a class="el" href="_standard_allocator_8cpp_source.html#l00043">43</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>{</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> (!p)</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span><span class="preprocessor">#ifdef _DEBUG</span></div>
+<div class="line"><span class="lineno">   49</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;[StandardAllocator::Deallocate] &quot;</span></div>
+<div class="line"><span class="lineno">   50</span>              &lt;&lt; p &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; size &lt;&lt; <span class="stringliteral">&quot;bytes, align &quot;</span> &lt;&lt; alignment &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   51</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   52</span>    <span class="comment">// 추적 정보 감소</span></div>
+<div class="line"><span class="lineno">   53</span>    {</div>
+<div class="line"><span class="lineno">   54</span>        std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="#a9c7ed7811cae2a889134b4543f913e94">Mutex</a>);</div>
+<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a9edcb19d91ca0994eb57892d86b47476">AllocationCount</a> &gt; 0)</div>
+<div class="line"><span class="lineno">   56</span>        {</div>
+<div class="line"><span class="lineno">   57</span>            <a class="code hl_variable" href="#a5045af9733ab1f78fbb8ea5eb16e6ea2">AllocatedSize</a> -= size;</div>
+<div class="line"><span class="lineno">   58</span>            <a class="code hl_variable" href="#a9edcb19d91ca0994eb57892d86b47476">AllocationCount</a>--;</div>
+<div class="line"><span class="lineno">   59</span>        }</div>
+<div class="line"><span class="lineno">   60</span>    }</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>    ::operator <span class="keyword">delete</span>(p, size, std::align_val_t(alignment));</div>
+<div class="line"><span class="lineno">   63</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_standard_allocator_a277672a86f83700e4ad0067a3f4e83d8_icgraph.png" border="0" usemap="#aclass_standard_allocator_a277672a86f83700e4ad0067a3f4e83d8_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_standard_allocator_a277672a86f83700e4ad0067a3f4e83d8_icgraph" id="aclass_standard_allocator_a277672a86f83700e4ad0067a3f4e83d8_icgraph">
+<area shape="rect" title=" " alt="" coords="186,5,318,48"/>
+<area shape="rect" href="class_standard_allocator.html#a46d9b1015acfd3ba312781f0b447aa44" title="할당된 메모리의 크기를 변경합니다." alt="" coords="5,5,138,48"/>
+<area shape="poly" title=" " alt="" coords="170,29,138,29,138,24,170,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1f06c5f5cbfcc6c40f02a5a9d6d27cb0" name="a1f06c5f5cbfcc6c40f02a5a9d6d27cb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f06c5f5cbfcc6c40f02a5a9d6d27cb0">&#9670;&#160;</a></span>GetLiveAllocationCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t StandardAllocator::GetLiveAllocationCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>반환값</dt><dd>현재 할당된 메모리 블록의 수 </dd></dl>
+
+<p><a class="el" href="class_i_allocator.html#a2babfaf243611e37a5bcb992218c893f">IAllocator</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="_standard_allocator_8cpp_source.html">StandardAllocator.cpp</a> 파일의 <a class="el" href="_standard_allocator_8cpp_source.html#l00113">113</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>{</div>
+<div class="line"><span class="lineno">  115</span>    std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="#a9c7ed7811cae2a889134b4543f913e94">Mutex</a>);</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a9edcb19d91ca0994eb57892d86b47476">AllocationCount</a>;</div>
+<div class="line"><span class="lineno">  117</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9721f235fad99912d486b81239176fdf" name="a9721f235fad99912d486b81239176fdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9721f235fad99912d486b81239176fdf">&#9670;&#160;</a></span>GetTotalAllocatedBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t StandardAllocator::GetTotalAllocatedBytes </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>반환값</dt><dd>현재 총 할당된 메모리 (bytes) </dd></dl>
+
+<p><a class="el" href="class_i_allocator.html#ab2b6ecb3ae786a68425d3ee4fe27d5b3">IAllocator</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="_standard_allocator_8cpp_source.html">StandardAllocator.cpp</a> 파일의 <a class="el" href="_standard_allocator_8cpp_source.html#l00107">107</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>{</div>
+<div class="line"><span class="lineno">  109</span>    std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="#a9c7ed7811cae2a889134b4543f913e94">Mutex</a>);</div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a5045af9733ab1f78fbb8ea5eb16e6ea2">AllocatedSize</a>;</div>
+<div class="line"><span class="lineno">  111</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8b53c3e6f81ea1db7050194cdb2ac003" name="a8b53c3e6f81ea1db7050194cdb2ac003"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b53c3e6f81ea1db7050194cdb2ac003">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_standard_allocator.html">StandardAllocator</a> &amp; StandardAllocator::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_standard_allocator.html">StandardAllocator</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_standard_allocator_a8b53c3e6f81ea1db7050194cdb2ac003_cgraph.png" border="0" usemap="#aclass_standard_allocator_a8b53c3e6f81ea1db7050194cdb2ac003_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_standard_allocator_a8b53c3e6f81ea1db7050194cdb2ac003_cgraph" id="aclass_standard_allocator_a8b53c3e6f81ea1db7050194cdb2ac003_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,138,48"/>
+<area shape="rect" href="class_standard_allocator.html#ab06c411585d3500d374a64416231282a" title=" " alt="" coords="186,5,318,48"/>
+<area shape="poly" title=" " alt="" coords="138,24,170,24,170,29,138,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a13f0f15550511f1a69c3a853bd2865b6" name="a13f0f15550511f1a69c3a853bd2865b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13f0f15550511f1a69c3a853bd2865b6">&#9670;&#160;</a></span>Owns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool StandardAllocator::Owns </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>이 할당기가 해당 메모리 블록을 소유하고 있는지 확인합니다. </p>
+<dl class="params"><dt>매개변수</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>확인할 메모리 포인터 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>반환값</dt><dd>소유하고 있으면 true, 아니면 false </dd></dl>
+
+<p><a class="el" href="class_i_allocator.html#a73ea9ba6cd12b26bf625c5af9513f4cd">IAllocator</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="_standard_allocator_8cpp_source.html">StandardAllocator.cpp</a> 파일의 <a class="el" href="_standard_allocator_8cpp_source.html#l00100">100</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  101</span>{</div>
+<div class="line"><span class="lineno">  102</span>    (void)p;</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  104</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a46d9b1015acfd3ba312781f0b447aa44" name="a46d9b1015acfd3ba312781f0b447aa44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46d9b1015acfd3ba312781f0b447aa44">&#9670;&#160;</a></span>Reallocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * StandardAllocator::Reallocate </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>oldSize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>newSize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>alignment</em></span><span class="paramdefsep"> = </span><span class="paramdefval">alignof(void&#160;*)</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>debugName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>할당된 메모리의 크기를 변경합니다. </p>
+<dl class="params"><dt>매개변수</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>크기를 변경할 기존 메모리 포인터 </td></tr>
+    <tr><td class="paramname">oldSize</td><td>기존 메모리의 크기 (bytes) </td></tr>
+    <tr><td class="paramname">newSize</td><td>새로운 메모리의 크기 (bytes) </td></tr>
+    <tr><td class="paramname">alignment</td><td>정렬 바이트 </td></tr>
+    <tr><td class="paramname">debugName</td><td>디버깅용 메모리 태그 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>반환값</dt><dd>재할당된 메모리의 포인터 (실패 시 nullptr) </dd></dl>
+
+<p><a class="el" href="class_i_allocator.html#ad4f9cdbeac15be4ef46737543e1ebf40">IAllocator</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="_standard_allocator_8cpp_source.html">StandardAllocator.cpp</a> 파일의 <a class="el" href="_standard_allocator_8cpp_source.html#l00065">65</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
+<div class="line"><span class="lineno">   67</span>    <span class="comment">// 기존 포인터가 없으면, 새로 할당하는 것과 같음</span></div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">if</span> (!p)</div>
+<div class="line"><span class="lineno">   69</span>    {</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="#a35c5a4ca31462027a9e93b56a039c434">Allocate</a>(newSize, alignment, debugName);</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>    <span class="comment">// 새로운 크기가 0이면, 해제하는 것과 동일</span></div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">if</span> (newSize == 0)</div>
+<div class="line"><span class="lineno">   75</span>    {</div>
+<div class="line"><span class="lineno">   76</span>        <a class="code hl_function" href="#a277672a86f83700e4ad0067a3f4e83d8">Deallocate</a>(p, oldSize, alignment);</div>
+<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span><span class="preprocessor">#ifdef _DEBUG</span></div>
+<div class="line"><span class="lineno">   81</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;[StandardAllocator::Reallocate] &quot;</span></div>
+<div class="line"><span class="lineno">   82</span>              &lt;&lt; p &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; oldSize &lt;&lt; <span class="stringliteral">&quot; -&gt; &quot;</span> &lt;&lt; newSize &lt;&lt; <span class="stringliteral">&quot; bytes, align &quot;</span></div>
+<div class="line"><span class="lineno">   83</span>              &lt;&lt; alignment &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   84</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <span class="comment">// 재할당 : 새로 할당 -&gt; 복사 -&gt; 기존 해제</span></div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordtype">void</span>* newPtr = <a class="code hl_function" href="#a35c5a4ca31462027a9e93b56a039c434">Allocate</a>(newSize, alignment, debugName);</div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">if</span> (!newPtr)</div>
+<div class="line"><span class="lineno">   89</span>    {</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   91</span>    }</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> copySize = std::min(oldSize, newSize);</div>
+<div class="line"><span class="lineno">   93</span>    memcpy(newPtr, p, copySize);</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_function" href="#a277672a86f83700e4ad0067a3f4e83d8">Deallocate</a>(p, oldSize, alignment);</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">return</span> newPtr;</div>
+<div class="line"><span class="lineno">   98</span>}</div>
+<div class="ttc" id="aclass_standard_allocator_html_a277672a86f83700e4ad0067a3f4e83d8"><div class="ttname"><a href="#a277672a86f83700e4ad0067a3f4e83d8">StandardAllocator::Deallocate</a></div><div class="ttdeci">void Deallocate(void *p, size_t size, size_t alignmnet) override</div><div class="ttdef"><b>Definition</b> <a href="_standard_allocator_8cpp_source.html#l00043">StandardAllocator.cpp:43</a></div></div>
+<div class="ttc" id="aclass_standard_allocator_html_a35c5a4ca31462027a9e93b56a039c434"><div class="ttname"><a href="#a35c5a4ca31462027a9e93b56a039c434">StandardAllocator::Allocate</a></div><div class="ttdeci">void * Allocate(size_t size, size_t alignment=alignof(void *), const char *debugName=nullptr) override</div><div class="ttdef"><b>Definition</b> <a href="_standard_allocator_8cpp_source.html#l00007">StandardAllocator.cpp:7</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_standard_allocator_a46d9b1015acfd3ba312781f0b447aa44_cgraph.png" border="0" usemap="#aclass_standard_allocator_a46d9b1015acfd3ba312781f0b447aa44_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_standard_allocator_a46d9b1015acfd3ba312781f0b447aa44_cgraph" id="aclass_standard_allocator_a46d9b1015acfd3ba312781f0b447aa44_cgraph">
+<area shape="rect" title="할당된 메모리의 크기를 변경합니다." alt="" coords="5,39,138,81"/>
+<area shape="rect" href="class_standard_allocator.html#a35c5a4ca31462027a9e93b56a039c434" title=" " alt="" coords="186,5,318,48"/>
+<area shape="poly" title=" " alt="" coords="137,45,170,39,171,44,138,50"/>
+<area shape="rect" href="class_standard_allocator.html#a277672a86f83700e4ad0067a3f4e83d8" title=" " alt="" coords="186,72,318,115"/>
+<area shape="poly" title=" " alt="" coords="138,70,171,76,170,81,137,75"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">멤버 데이터 문서화</h2>
+<a id="a5045af9733ab1f78fbb8ea5eb16e6ea2" name="a5045af9733ab1f78fbb8ea5eb16e6ea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5045af9733ab1f78fbb8ea5eb16e6ea2">&#9670;&#160;</a></span>AllocatedSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t StandardAllocator::AllocatedSize = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_standard_allocator_8h_source.html">StandardAllocator.h</a> 파일의 <a class="el" href="_standard_allocator_8h_source.html#l00045">45</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a9edcb19d91ca0994eb57892d86b47476" name="a9edcb19d91ca0994eb57892d86b47476"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9edcb19d91ca0994eb57892d86b47476">&#9670;&#160;</a></span>AllocationCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t StandardAllocator::AllocationCount = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_standard_allocator_8h_source.html">StandardAllocator.h</a> 파일의 <a class="el" href="_standard_allocator_8h_source.html#l00046">46</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a9c7ed7811cae2a889134b4543f913e94" name="a9c7ed7811cae2a889134b4543f913e94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c7ed7811cae2a889134b4543f913e94">&#9670;&#160;</a></span>Mutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex StandardAllocator::Mutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel mutable">mutable</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_standard_allocator_8h_source.html">StandardAllocator.h</a> 파일의 <a class="el" href="_standard_allocator_8h_source.html#l00044">44</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<hr/>이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.:<ul>
+<li>C:/Users/Diguedman/source/repos/Room-for-Two/Room-For-Two/Allocator/<a class="el" href="_standard_allocator_8h_source.html">StandardAllocator.h</a></li>
+<li>C:/Users/Diguedman/source/repos/Room-for-Two/Room-For-Two/Allocator/<a class="el" href="_standard_allocator_8cpp_source.html">StandardAllocator.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_standard_allocator.html">StandardAllocator</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

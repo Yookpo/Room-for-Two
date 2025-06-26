@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Allocator: C:/Users/Diguedman/source/repos/Room-for-Two/Room-For-Two/Allocator/IAllocator.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Allocator<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','검색',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_i_allocator_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">IAllocator.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_i_allocator_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// 이 클래스는 allocator 인터페이스</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;cstddef&gt;</span> <span class="comment">// size_t</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_i_allocator.html">    6</a></span><span class="keyword">class </span><a class="code hl_class" href="class_i_allocator.html">IAllocator</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_i_allocator.html#ac3caf7ed64750f96cea5d5429301a011">    9</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_i_allocator.html#ac3caf7ed64750f96cea5d5429301a011">~IAllocator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_i_allocator.html#afd47f4216eb6f7860f77c6bd4e9dd462">   18</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* <a class="code hl_function" href="class_i_allocator.html#afd47f4216eb6f7860f77c6bd4e9dd462">Allocate</a>(</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordtype">size_t</span> size, <span class="keywordtype">size_t</span> alignment = <span class="keyword">alignof</span>(<span class="keywordtype">void</span>*),</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* debugName = <span class="keyword">nullptr</span>) = 0;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_i_allocator.html#ad4f9cdbeac15be4ef46737543e1ebf40">   32</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* <a class="code hl_function" href="class_i_allocator.html#ad4f9cdbeac15be4ef46737543e1ebf40">Reallocate</a>(</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">void</span>* p, <span class="keywordtype">size_t</span> oldSize, <span class="keywordtype">size_t</span> newSize,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">size_t</span>      alignment = <span class="keyword">alignof</span>(<span class="keywordtype">void</span>*),</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* debugName = <span class="keyword">nullptr</span>) = 0;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_i_allocator.html#a684bfd0e68bf6a63217893acde5d66bb">   42</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_i_allocator.html#a684bfd0e68bf6a63217893acde5d66bb">Deallocate</a>(<span class="keywordtype">void</span>* p, <span class="keywordtype">size_t</span> size, <span class="keywordtype">size_t</span> alignment) = 0;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">// --- 메모리 추적 기능 ---</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_i_allocator.html#ab2b6ecb3ae786a68425d3ee4fe27d5b3">   49</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_i_allocator.html#ab2b6ecb3ae786a68425d3ee4fe27d5b3">GetTotalAllocatedBytes</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_i_allocator.html#a2babfaf243611e37a5bcb992218c893f">   54</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_i_allocator.html#a2babfaf243611e37a5bcb992218c893f">GetLiveAllocationCount</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_i_allocator.html#a73ea9ba6cd12b26bf625c5af9513f4cd">   62</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_i_allocator.html#a73ea9ba6cd12b26bf625c5af9513f4cd">Owns</a>(<span class="keywordtype">void</span>* p) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
+</div>
+<div class="ttc" id="aclass_i_allocator_html"><div class="ttname"><a href="class_i_allocator.html">IAllocator</a></div><div class="ttdef"><b>Definition</b> <a href="#l00006">IAllocator.h:7</a></div></div>
+<div class="ttc" id="aclass_i_allocator_html_a2babfaf243611e37a5bcb992218c893f"><div class="ttname"><a href="class_i_allocator.html#a2babfaf243611e37a5bcb992218c893f">IAllocator::GetLiveAllocationCount</a></div><div class="ttdeci">virtual size_t GetLiveAllocationCount() const =0</div></div>
+<div class="ttc" id="aclass_i_allocator_html_a684bfd0e68bf6a63217893acde5d66bb"><div class="ttname"><a href="class_i_allocator.html#a684bfd0e68bf6a63217893acde5d66bb">IAllocator::Deallocate</a></div><div class="ttdeci">virtual void Deallocate(void *p, size_t size, size_t alignment)=0</div><div class="ttdoc">메모리를 해제합니다.</div></div>
+<div class="ttc" id="aclass_i_allocator_html_a73ea9ba6cd12b26bf625c5af9513f4cd"><div class="ttname"><a href="class_i_allocator.html#a73ea9ba6cd12b26bf625c5af9513f4cd">IAllocator::Owns</a></div><div class="ttdeci">virtual bool Owns(void *p) const =0</div><div class="ttdoc">이 할당기가 해당 메모리 블록을 소유하고 있는지 확인합니다.</div></div>
+<div class="ttc" id="aclass_i_allocator_html_ab2b6ecb3ae786a68425d3ee4fe27d5b3"><div class="ttname"><a href="class_i_allocator.html#ab2b6ecb3ae786a68425d3ee4fe27d5b3">IAllocator::GetTotalAllocatedBytes</a></div><div class="ttdeci">virtual size_t GetTotalAllocatedBytes() const =0</div></div>
+<div class="ttc" id="aclass_i_allocator_html_ac3caf7ed64750f96cea5d5429301a011"><div class="ttname"><a href="class_i_allocator.html#ac3caf7ed64750f96cea5d5429301a011">IAllocator::~IAllocator</a></div><div class="ttdeci">virtual ~IAllocator()=default</div></div>
+<div class="ttc" id="aclass_i_allocator_html_ad4f9cdbeac15be4ef46737543e1ebf40"><div class="ttname"><a href="class_i_allocator.html#ad4f9cdbeac15be4ef46737543e1ebf40">IAllocator::Reallocate</a></div><div class="ttdeci">virtual void * Reallocate(void *p, size_t oldSize, size_t newSize, size_t alignment=alignof(void *), const char *debugName=nullptr)=0</div><div class="ttdoc">할당된 메모리의 크기를 변경합니다.</div></div>
+<div class="ttc" id="aclass_i_allocator_html_afd47f4216eb6f7860f77c6bd4e9dd462"><div class="ttname"><a href="class_i_allocator.html#afd47f4216eb6f7860f77c6bd4e9dd462">IAllocator::Allocate</a></div><div class="ttdeci">virtual void * Allocate(size_t size, size_t alignment=alignof(void *), const char *debugName=nullptr)=0</div><div class="ttdoc">메모리를 할당합니다.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a href="dir_c3309224b885f37fdf8bcc14bb189a11.html">Room-for-Two</a></li><li class="navelem"><a href="dir_8bbc63da8a11c85b8922690fd6ee2527.html">Room-For-Two</a></li><li class="navelem"><a href="dir_9035b753f1e1585f194f076a9634424a.html">Allocator</a></li><li class="navelem"><a href="_i_allocator_8h.html">IAllocator.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

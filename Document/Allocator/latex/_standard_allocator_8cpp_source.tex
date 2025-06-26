@@ -1,0 +1,124 @@
+\doxysection{Standard\+Allocator.\+cpp}
+\hypertarget{_standard_allocator_8cpp_source}{}\label{_standard_allocator_8cpp_source}\index{C:/Users/Diguedman/source/repos/Room-\/for-\/Two/Room-\/For-\/Two/Allocator/StandardAllocator.cpp@{C:/Users/Diguedman/source/repos/Room-\/for-\/Two/Room-\/For-\/Two/Allocator/StandardAllocator.cpp}}
+\mbox{\hyperlink{_standard_allocator_8cpp}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_standard_allocator_8h}{StandardAllocator.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <new>}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00007}\mbox{\hyperlink{class_standard_allocator_a35c5a4ca31462027a9e93b56a039c434}{00007}}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{class_standard_allocator_a35c5a4ca31462027a9e93b56a039c434}{StandardAllocator::Allocate}}(\textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ alignment,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ debugName)}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordtype}{void}*\ ptr\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ ptr\ =\ ::operator\ \textcolor{keyword}{new}(size,\ std::align\_val\_t(alignment));}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::bad\_alloc\&)}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#ifdef\ \_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[StandardAllocator::Allocator]\ FAILED\ to\ allocate\ :\ "{}}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ size\ <<\ \textcolor{stringliteral}{"{}\ bytes"{}}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ (debugName\ ?\ \textcolor{stringliteral}{"{}\ for\ "{}}\ :\ \textcolor{stringliteral}{"{}"{}})\ <<\ (debugName\ ?\ debugName\ :\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00022}00022\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//\ 추적\ 정보\ 갱신}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\mbox{\hyperlink{class_standard_allocator_a9c7ed7811cae2a889134b4543f913e94}{Mutex}});}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_standard_allocator_a5045af9733ab1f78fbb8ea5eb16e6ea2}{AllocatedSize}}\ +=\ size;}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_standard_allocator_a9edcb19d91ca0994eb57892d86b47476}{AllocationCount}}++;}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00033}00033\ \textcolor{preprocessor}{\#ifdef\ \_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00034}00034\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[StandatdAllocator::Allocator]\ "{}}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ (debugName\ ?\ debugName\ :\ \textcolor{stringliteral}{"{}Unnamed"{}})}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ ("{}}\ <<\ size\ <<\ \textcolor{stringliteral}{"{}\ bytes,\ align\ "{}}\ <<\ alignment}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{})\ -\/>\ "{}}\ <<\ ptr\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00038}00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ ptr;}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00043}\mbox{\hyperlink{class_standard_allocator_a277672a86f83700e4ad0067a3f4e83d8}{00043}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_standard_allocator_a277672a86f83700e4ad0067a3f4e83d8}{StandardAllocator::Deallocate}}(\textcolor{keywordtype}{void}*\ p,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ alignment)}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00044}00044\ \{}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (!p)}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00048}00048\ \textcolor{preprocessor}{\#ifdef\ \_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00049}00049\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[StandardAllocator::Deallocate]\ "{}}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ p\ <<\ \textcolor{stringliteral}{"{}\ ("{}}\ <<\ size\ <<\ \textcolor{stringliteral}{"{}bytes,\ align\ "{}}\ <<\ alignment\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00051}00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//\ 추적\ 정보\ 감소}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\mbox{\hyperlink{class_standard_allocator_a9c7ed7811cae2a889134b4543f913e94}{Mutex}});}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_standard_allocator_a9edcb19d91ca0994eb57892d86b47476}{AllocationCount}}\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_standard_allocator_a5045af9733ab1f78fbb8ea5eb16e6ea2}{AllocatedSize}}\ -\/=\ size;}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_standard_allocator_a9edcb19d91ca0994eb57892d86b47476}{AllocationCount}}-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00062}00062\ \ \ \ \ ::operator\ \textcolor{keyword}{delete}(p,\ size,\ std::align\_val\_t(alignment));}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00065}\mbox{\hyperlink{class_standard_allocator_a46d9b1015acfd3ba312781f0b447aa44}{00065}}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{class_standard_allocator_a46d9b1015acfd3ba312781f0b447aa44}{StandardAllocator::Reallocate}}(\textcolor{keywordtype}{void}*\ p,\ \textcolor{keywordtype}{size\_t}\ oldSize,\ \textcolor{keywordtype}{size\_t}\ newSize,\ \textcolor{keywordtype}{size\_t}\ alignment,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ debugName)}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00066}00066\ \{}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{comment}{//\ 기존\ 포인터가\ 없으면,\ 새로\ 할당하는\ 것과\ 같음}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (!p)}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00069}00069\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_standard_allocator_a35c5a4ca31462027a9e93b56a039c434}{Allocate}}(newSize,\ alignment,\ debugName);}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{comment}{//\ 새로운\ 크기가\ 0이면,\ 해제하는\ 것과\ 동일}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (newSize\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00075}00075\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_standard_allocator_a277672a86f83700e4ad0067a3f4e83d8}{Deallocate}}(p,\ oldSize,\ alignment);}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00080}00080\ \textcolor{preprocessor}{\#ifdef\ \_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00081}00081\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[StandardAllocator::Reallocate]\ "{}}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ p\ <<\ \textcolor{stringliteral}{"{}\ ("{}}\ <<\ oldSize\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ "{}}\ <<\ newSize\ <<\ \textcolor{stringliteral}{"{}\ bytes,\ align\ "{}}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ alignment\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00084}00084\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{comment}{//\ 재할당\ :\ 새로\ 할당\ -\/>\ 복사\ -\/>\ 기존\ 해제}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordtype}{void}*\ newPtr\ =\ \mbox{\hyperlink{class_standard_allocator_a35c5a4ca31462027a9e93b56a039c434}{Allocate}}(newSize,\ alignment,\ debugName);}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{if}\ (!newPtr)}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00089}00089\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ copySize\ =\ std::min(oldSize,\ newSize);}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00093}00093\ \ \ \ \ memcpy(newPtr,\ p,\ copySize);}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00095}00095\ \ \ \ \ \mbox{\hyperlink{class_standard_allocator_a277672a86f83700e4ad0067a3f4e83d8}{Deallocate}}(p,\ oldSize,\ alignment);}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{keywordflow}{return}\ newPtr;}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00100}\mbox{\hyperlink{class_standard_allocator_a13f0f15550511f1a69c3a853bd2865b6}{00100}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_standard_allocator_a13f0f15550511f1a69c3a853bd2865b6}{StandardAllocator::Owns}}(\textcolor{keywordtype}{void}*\ p)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00101}00101\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00102}00102\ \ \ \ \ (void)p;}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00104}00104\ \}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00107}\mbox{\hyperlink{class_standard_allocator_a9721f235fad99912d486b81239176fdf}{00107}}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_standard_allocator_a9721f235fad99912d486b81239176fdf}{StandardAllocator::GetTotalAllocatedBytes}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00108}00108\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00109}00109\ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\mbox{\hyperlink{class_standard_allocator_a9c7ed7811cae2a889134b4543f913e94}{Mutex}});}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_standard_allocator_a5045af9733ab1f78fbb8ea5eb16e6ea2}{AllocatedSize}};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00111}00111\ \}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00113}\mbox{\hyperlink{class_standard_allocator_a1f06c5f5cbfcc6c40f02a5a9d6d27cb0}{00113}}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_standard_allocator_a1f06c5f5cbfcc6c40f02a5a9d6d27cb0}{StandardAllocator::GetLiveAllocationCount}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00114}00114\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00115}00115\ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\mbox{\hyperlink{class_standard_allocator_a9c7ed7811cae2a889134b4543f913e94}{Mutex}});}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00116}00116\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_standard_allocator_a9edcb19d91ca0994eb57892d86b47476}{AllocationCount}};}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00117}00117\ \}}
+\DoxyCodeLine{\Hypertarget{_standard_allocator_8cpp_source_l00118}00118\ }
+
+\end{DoxyCode}
