@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36212.18 d17.14
+VisualStudioVersion = 17.14.36212.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Allocator", "Allocator\Allocator.vcxproj", "{BEC9A8CF-CFA7-4AA2-B935-C15B1536C2A8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Json_Parser_Wrapping", "Json_Parser_Wrapping\Json_Parser_Wrapping.vcxproj", "{8A52B129-8F85-435B-94C4-F136284ED42B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Allocator_Test", "Allocator_Test\Allocator_Test.vcxproj", "{6B48A9FA-E8C2-408B-A920-F9DD819D05EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,14 @@ Global
 		{8A52B129-8F85-435B-94C4-F136284ED42B}.Release|x64.Build.0 = Release|x64
 		{8A52B129-8F85-435B-94C4-F136284ED42B}.Release|x86.ActiveCfg = Release|Win32
 		{8A52B129-8F85-435B-94C4-F136284ED42B}.Release|x86.Build.0 = Release|Win32
+		{6B48A9FA-E8C2-408B-A920-F9DD819D05EA}.Debug|x64.ActiveCfg = Debug|x64
+		{6B48A9FA-E8C2-408B-A920-F9DD819D05EA}.Debug|x64.Build.0 = Debug|x64
+		{6B48A9FA-E8C2-408B-A920-F9DD819D05EA}.Debug|x86.ActiveCfg = Debug|Win32
+		{6B48A9FA-E8C2-408B-A920-F9DD819D05EA}.Debug|x86.Build.0 = Debug|Win32
+		{6B48A9FA-E8C2-408B-A920-F9DD819D05EA}.Release|x64.ActiveCfg = Release|x64
+		{6B48A9FA-E8C2-408B-A920-F9DD819D05EA}.Release|x64.Build.0 = Release|x64
+		{6B48A9FA-E8C2-408B-A920-F9DD819D05EA}.Release|x86.ActiveCfg = Release|Win32
+		{6B48A9FA-E8C2-408B-A920-F9DD819D05EA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

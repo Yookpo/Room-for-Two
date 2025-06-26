@@ -1,4 +1,8 @@
 #include "StandardAllocator.h"
+#include <new>
+#include <cstring>
+#include <algorithm>
+#include <iostream>
 
 void* StandardAllocator::Allocate(size_t size, size_t alignment, const char* debugName)
 {
@@ -10,10 +14,12 @@ void* StandardAllocator::Allocate(size_t size, size_t alignment, const char* deb
 	}
 	catch (const std::bad_alloc&)
 	{
-		std::cerr << "[StandardAllocator] Allocation failed: "
-				  << (debugName ? debugName : "Unknown")
+#ifdef _DEBUG
+		std::cerr << "[StandardAllocator::Allocator] FAILED to allocate : "
+				  << size << " bytes"
+				  << (debugName ? " for " : "") << (debugName ? debugName : "")
 				  << std::endl;
-
+#endif
 		return nullptr;
 	}
 
@@ -25,31 +31,78 @@ void* StandardAllocator::Allocate(size_t size, size_t alignment, const char* deb
 	}
 
 #ifdef _DEBUG
-	std::cout << "[Allocate] " << (debugName ? debugName : "Unnamed")
+	std::cout << "[StandatdAllocator::Allocator] "
+			  << (debugName ? debugName : "Unnamed")
 			  << " (" << size << " bytes, align " << alignment
-			  << ", address " << ptr << ")\n";
+			  << ") -> " << ptr << "\n";
 #endif
 
 	return ptr;
 }
 
-void StandardAllocator::Deallocate(void* p, size_t size)
+void StandardAllocator::Deallocate(void* p, size_t size, size_t alignment)
 {
 	if (!p)
 		return;
 
-	::operator delete(p, std::align_val_t(alignof(void*)));
-
+#ifdef _DEBUG
+	std::cout << "[StandardAllocator::Deallocate] "
+			  << p << " (" << size << "bytes, align " << alignment << ")\n";
+#endif
 	// 추적 정보 감소
 	{
 		std::lock_guard<std::mutex> lock(Mutex);
-		AllocatedSize -= size;
-		AllocationCount--;
+		if (AllocationCount > 0)
+		{
+			AllocatedSize -= size;
+			AllocationCount--;
+		}
 	}
-#ifdef _DEBUG
-	std::cout << "[Deallocate] (" << size << " bytes)\n";
-#endif
+
+	::operator delete(p, size, std::align_val_t(alignment));
 }
+
+void* StandardAllocator::Reallocate(void* p, size_t oldSize, size_t newSize, size_t alignment, const char* debugName)
+{
+	// 기존 포인터가 없으면, 새로 할당하는 것과 같음
+	if (!p)
+	{
+		return Allocate(newSize, alignment, debugName);
+	}
+
+	// 새로운 크기가 0이면, 해제하는 것과 동일
+	if (newSize == 0)
+	{
+		Deallocate(p, oldSize, alignment);
+		return nullptr;
+	}
+
+#ifdef _DEBUG
+	std::cout << "[StandardAllocator::Reallocate] "
+			  << p << " (" << oldSize << " -> " << newSize << " bytes, align "
+			  << alignment << ")\n";
+#endif
+
+	// 재할당 : 새로 할당 -> 복사 -> 기존 해제
+	void* newPtr = Allocate(newSize, alignment, debugName);
+	if (!newPtr)
+	{
+		return nullptr;
+	}
+	const size_t copySize = std::min(oldSize, newSize);
+	memcpy(newPtr, p, copySize);
+
+	Deallocate(p, oldSize, alignment);
+
+	return newPtr;
+}
+
+bool StandardAllocator::Owns(void* p) const
+{
+	(void)p;
+	return false;
+}
+
 
 size_t StandardAllocator::GetTotalAllocatedBytes() const
 {
@@ -62,3 +115,4 @@ size_t StandardAllocator::GetLiveAllocationCount() const
 	std::lock_guard<std::mutex> lock(Mutex);
 	return AllocationCount;
 }
+
