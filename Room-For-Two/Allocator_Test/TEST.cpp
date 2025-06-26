@@ -1,126 +1,92 @@
 // main.cpp
+
 #include "StandardAllocator.h"
-#include <iostream>
-#include <string>
+#include "TestEntity.h"
 #include <vector>
-#include <cassert> // 테스트 검증을 위한 assert
+#include <cassert>
 
-// 테스트용 간단한 Player 클래스
-struct Player
+// 위치 정보를 나타내는 간단한 구조체
+struct TransformComponent
 {
-	int			Health;
-	float		Position[3];
-	std::string Name;
-
-	Player(int health, std::string name)
-		: Health(health), Name(std::move(name))
-	{
-		Position[0] = 0.0f;
-		Position[1] = 0.0f;
-		Position[2] = 0.0f;
-#ifdef _DEBUG
-		std::cout << "  -> Player '" << Name << "' constructed.\n";
-#endif
-	}
-
-	~Player()
-	{
-#ifdef _DEBUG
-		std::cout << "  -> Player '" << Name << "' destructed.\n";
-#endif
-	}
+	float x, y, z;
 };
 
-// 할당기 상태를 예쁘게 출력하는 도우미 함수
-void PrintAllocatorStatus(const IAllocator& allocator, const std::string& context)
+// 체력 정보를 나타내는 간단한 구조체
+struct HealthComponent
 {
-	std::cout << "\n--- Status after: " << context << " ---\n";
-	std::cout << "Total Allocated Bytes: " << allocator.GetTotalAllocatedBytes() << "\n";
-	std::cout << "Live Allocation Count: " << allocator.GetLiveAllocationCount() << "\n";
-	std::cout << "-------------------------------------\n\n";
-}
+	int currentHealth;
+	int maxHealth;
+};
 
 int main()
 {
-	// 1. 할당기 생성
-	StandardAllocator allocator;
-	PrintAllocatorStatus(allocator, "Initialization");
+	// =======================================================
+	// 1. 게임 시작: 전역 할당기 생성
+	// =======================================================
+	StandardAllocator globalAllocator;
+	std::cout << "========= Game Start =========\n";
+	globalAllocator.GetLiveAllocationCount(); // 상태 출력용
 
-	// 2. 기본 할당 및 해제 테스트
-	std::cout << ">>> TEST 1: Basic Allocate & Deallocate <<<\n";
-	const size_t basicSize = 100;
-	const size_t basicAlign = alignof(void*);
-	void*		 basicMem = allocator.Allocate(basicSize, basicAlign, "BasicBlock");
-	assert(basicMem != nullptr);
-	PrintAllocatorStatus(allocator, "Basic Allocation");
-	allocator.Deallocate(basicMem, basicSize, basicAlign);
-	PrintAllocatorStatus(allocator, "Basic Deallocation");
+	// 게임 세계에 있는 모든 엔티티를 관리할 리스트
+	std::vector<TestEntity*> worldEntities;
 
-	// 3. 정렬 할당 테스트
-	std::cout << ">>> TEST 2: Aligned Allocation <<<\n";
-	const size_t alignedSize = 256;
-	const size_t alignedAlign = 64; // SIMD 등을 위한 64바이트 정렬
-	void*		 alignedMem = allocator.Allocate(alignedSize, alignedAlign, "AlignedSIMDBlock");
-	assert(alignedMem != nullptr);
-	// 주소가 정말 64의 배수인지 확인
-	assert(reinterpret_cast<uintptr_t>(alignedMem) % alignedAlign == 0);
-	PrintAllocatorStatus(allocator, "Aligned Allocation (64 bytes)");
-	allocator.Deallocate(alignedMem, alignedSize, alignedAlign);
-	PrintAllocatorStatus(allocator, "Aligned Deallocation");
+	// =======================================================
+	// 2. 게임 진행: 엔티티 생성 및 데이터 추가
+	// =======================================================
+	std::cout << "\n========= Player and Enemy Spawn =========\n";
 
-	// 4. 재할당 테스트
-	std::cout << ">>> TEST 3: Reallocation <<<\n";
-	const size_t reallocAlign = alignof(int);
-	// 4-1. 늘리기 (Grow)
-	void* reallocMem = allocator.Allocate(20, reallocAlign, "ReallocBlock_Initial");
-	strcpy_s(static_cast<char*>(reallocMem), 20, "Hello");
-	reallocMem = allocator.Reallocate(reallocMem, 20, 50, reallocAlign, "ReallocBlock_Grown");
-	assert(strcmp(static_cast<char*>(reallocMem), "Hello") == 0); // 데이터가 보존되었는지 확인
-	PrintAllocatorStatus(allocator, "Reallocation (Grow 20 -> 50)");
+	// 플레이어 생성
+	auto* player = new TestEntity(globalAllocator, "Player");
+	worldEntities.push_back(player);
 
-	// 4-2. 줄이기 (Shrink)
-	reallocMem = allocator.Reallocate(reallocMem, 50, 10, reallocAlign, "ReallocBlock_Shrunk");
-	assert(strncmp(static_cast<char*>(reallocMem), "Hello", 5) == 0); // 데이터가 보존되었는지 확인
-	PrintAllocatorStatus(allocator, "Reallocation (Shrink 50 -> 10)");
-	allocator.Deallocate(reallocMem, 10, reallocAlign);
-	PrintAllocatorStatus(allocator, "Final Deallocation of ReallocBlock");
+	// 플레이어에게 컴포넌트 데이터 추가
+	TransformComponent playerTransform = { 10.f, 20.f, 30.f };
+	player->AddComponentData(&playerTransform, sizeof(TransformComponent));
 
-	// 5. C++ 객체 할당 테스트 (배치 new)
-	std::cout << ">>> TEST 4: C++ Object Allocation (Placement New) <<<\n";
-	const size_t playerSize = sizeof(Player);
-	const size_t playerAlign = alignof(Player);
-	void*		 playerMem = allocator.Allocate(playerSize, playerAlign, "PlayerObject");
+	HealthComponent playerHealth = { 100, 100 };
+	player->AddComponentData(&playerHealth, sizeof(HealthComponent));
 
-	// 할당된 메모리 위에 Player 객체를 생성 (배치 new)
-	Player* player = new (playerMem) Player(100, "Ghost");
+	// 적 생성
+	auto* enemy = new TestEntity(globalAllocator, "Goblin");
+	worldEntities.push_back(enemy);
 
-	PrintAllocatorStatus(allocator, "Player Object Allocation + Construction");
+	// 적에게 컴포넌트 데이터 추가
+	TransformComponent enemyTransform = { 50.f, 60.f, 70.f };
+	enemy->AddComponentData(&enemyTransform, sizeof(TransformComponent));
 
-	// 객체 소멸자를 명시적으로 호출해야 함!
-	player->~Player();
+	// =======================================================
+	// 3. 게임 루프 (현재 상태 확인)
+	// =======================================================
+	std::cout << "\n========= Current World Status =========\n";
+	for (const auto* entity : worldEntities)
+	{
+		entity->PrintStatus();
+	}
+	std::cout << "Global Allocator Live Allocations: " << globalAllocator.GetLiveAllocationCount() << "\n";
+	assert(globalAllocator.GetLiveAllocationCount() == 2); // 엔티티 2개의 버퍼가 할당됨
 
-	// 이제 순수 메모리를 해제
-	allocator.Deallocate(playerMem, playerSize, playerAlign);
-	PrintAllocatorStatus(allocator, "Player Object Deallocation after Destruction");
+	// =======================================================
+	// 4. 게임 종료: 모든 엔티티 파괴 및 메모리 해제
+	// =======================================================
+	std::cout << "\n========= Game Over: Cleaning up all entities =========\n";
+	for (auto* entity : worldEntities)
+	{
+		delete entity; // delete가 호출되면 GameEntity의 소멸자(~GameEntity)가 실행됨
+	}
+	worldEntities.clear();
 
-	// 6. 엣지 케이스 테스트
-	std::cout << ">>> TEST 5: Edge Cases <<<\n";
-	// 6-1. nullptr 해제 시도 (아무일도 일어나지 않아야 함)
-	allocator.Deallocate(nullptr, 0, 0);
+	// =======================================================
+	// 5. 최종 확인
+	// =======================================================
+	std::cout << "\n========= Final Allocator Status =========\n";
+	std::cout << "Final Live Allocations: " << globalAllocator.GetLiveAllocationCount() << "\n";
+	std::cout << "Final Allocated Bytes: " << globalAllocator.GetTotalAllocatedBytes() << "\n";
 
-	// 6-2. nullptr 재할당 시도 (새로운 할당처럼 동작해야 함)
-	void* reallocFromNull = allocator.Reallocate(nullptr, 0, 32, alignof(void*), "ReallocFromNull");
-	assert(reallocFromNull != nullptr);
-	PrintAllocatorStatus(allocator, "Reallocate from nullptr");
-	allocator.Deallocate(reallocFromNull, 32, alignof(void*));
+	// 모든 메모리가 깨끗하게 해제되었는지 확인
+	assert(globalAllocator.GetLiveAllocationCount() == 0);
+	assert(globalAllocator.GetTotalAllocatedBytes() == 0);
 
-	// 최종 확인: 모든 메모리가 해제되었는지 확인
-	std::cout << ">>> FINAL CHECK <<<\n";
-	PrintAllocatorStatus(allocator, "End of Main");
-	assert(allocator.GetTotalAllocatedBytes() == 0);
-	assert(allocator.GetLiveAllocationCount() == 0);
-
-	std::cout << "All tests passed successfully!\n";
+	std::cout << "\nGame simulation finished. Memory successfully cleaned up.\n";
 
 	return 0;
 }
