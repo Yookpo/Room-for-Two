@@ -1,0 +1,67 @@
+\doxysection{C\+:/\+Users/dongd/source/repos/\+Room-\/for-\/\+Two/\+Room-\/\+For-\/\+Two/\+Logger/\+Logger.h 파일 참조}
+\hypertarget{_logger_8h}{}\label{_logger_8h}\index{C:/Users/dongd/source/repos/Room-\/for-\/Two/Room-\/For-\/Two/Logger/Logger.h@{C:/Users/dongd/source/repos/Room-\/for-\/Two/Room-\/For-\/Two/Logger/Logger.h}}
+
+
+싱글턴(\+Singleton) 패턴을 사용한 로거 클래스를 정의합니다.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+Logger.\+h에 대한 include 의존 그래프
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_logger_8h__incl}
+\end{center}
+\end{figure}
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{_logger_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{클래스}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_log_1_1_logger}{Log\+::\+Logger}}
+\begin{DoxyCompactList}\small\item\em 싱글턴 로거 클래스입니다. 파일 및 콜백으로 로그를 출력합니다. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{네임스페이스}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_log}{Log}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{열거형 타입}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespace_log_a91ffbf64c90bd159da8cd8f872d7ebea}{Log\+::\+ELog\+Level}} \{ \mbox{\hyperlink{namespace_log_a91ffbf64c90bd159da8cd8f872d7ebeaa4059b0251f66a18cb56f544728796875}{Log\+::\+Info}} = 0
+, \mbox{\hyperlink{namespace_log_a91ffbf64c90bd159da8cd8f872d7ebeaa0eaadb4fcb48a0a0ed7bc9868be9fbaa}{Log\+::\+Warning}}
+, \mbox{\hyperlink{namespace_log_a91ffbf64c90bd159da8cd8f872d7ebeaa902b0d55fddef6f8d651fe1035b7d4bd}{Log\+::\+Error}}
+, \mbox{\hyperlink{namespace_log_a91ffbf64c90bd159da8cd8f872d7ebeaa278d01e5af56273bae1bb99a98b370cd}{Log\+::\+Critical}}
+ \}
+\begin{DoxyCompactList}\small\item\em 로그 메시지의 심각도 수준을 나타내는 열거형입니다. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+싱글턴(\+Singleton) 패턴을 사용한 로거 클래스를 정의합니다. 
+
+파일 로깅, 콜백 등록, 다중 스레드 환경에서의 로그 기록 동기화 기능을 제공합니다. \begin{DoxyAuthor}{작성자}
+akflfldh (작성자 이름) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{버전}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{날짜}
+2025-\/06-\/29 
+\end{DoxyDate}
+
+
+\mbox{\hyperlink{_logger_8h_source}{Logger.\+h}} 파일에서 정의되었습니다.
+

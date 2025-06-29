@@ -1,0 +1,2 @@
+[Error][Asset]:해당Asset이 유효하지않아 올바르게 작동되지않았습니다.
+[Critical][Render]:렌더시스템코어에서 Gpu리소스가 유효하지않았습니다.

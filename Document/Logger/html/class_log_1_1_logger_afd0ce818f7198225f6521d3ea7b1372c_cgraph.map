@@ -1,0 +1,5 @@
+<map id="Log::Logger::RegisterCallback" name="Log::Logger::RegisterCallback">
+<area shape="rect" id="Node000001" title="특정 객체의 멤버 함수를 콜백으로 등록하기 위한 템플릿 헬퍼 함수입니다." alt="" coords="5,5,203,32"/>
+<area shape="rect" id="Node000002" href="$class_log_1_1_logger.html#a1ca2186930627197427e795aa91690d6" title="로그 메시지가 생성될 때 호출될 콜백 함수를 등록합니다." alt="" coords="251,5,448,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,16,235,16,235,21,203,21"/>
+</map>

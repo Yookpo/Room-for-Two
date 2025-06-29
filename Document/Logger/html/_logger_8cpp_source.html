@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logger: C:/Users/dongd/source/repos/Room-for-Two/Room-For-Two/Logger/Logger.cpp 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logger<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','검색',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_logger_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Logger.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_logger_8cpp.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_logger_8h.html">Logger.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include&lt;sstream&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include&lt;mutex&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_log_1_1_logger.html#a1ca2186930627197427e795aa91690d6">   13</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_log_1_1_logger.html#a1ca2186930627197427e795aa91690d6">Log::Logger::RegisterCallback</a>(std::function&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> std::string&amp;)&gt; callback)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        std::lock_guard&lt;std::mutex&gt; lock_guard(<a class="code hl_variable" href="class_log_1_1_logger.html#afe858da280d12dcb6dae1a49ba1e5083">LogMutex</a>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_variable" href="class_log_1_1_logger.html#a2ecb1d8b4b92591454b475f3095e05a3">CallbackVector</a>.push_back(std::move(callback));</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
+</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_log_1_1_logger.html#a1c1822d66a5f0eb86b539af5e52e6d0e">   23</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_log_1_1_logger.html#a1c1822d66a5f0eb86b539af5e52e6d0e">Log::Logger::IsValid</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_log_1_1_logger.html#ad8f90ad4c86e91dae51d4070ca8407c0">ValidState</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_log_1_1_logger.html#aba457b540e11255a7e477ec7e2dd219d">   28</a></span><a class="code hl_function" href="class_log_1_1_logger.html#aba457b540e11255a7e477ec7e2dd219d">Log::Logger::Logger</a>()</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    : <a class="code hl_variable" href="class_log_1_1_logger.html#ad8f90ad4c86e91dae51d4070ca8407c0">ValidState</a>(false)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_variable" href="class_log_1_1_logger.html#a24564985683c1647977475630befedf2">ToLogLevelStringTable</a>[<a class="code hl_enumvalue" href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebeaa0eaadb4fcb48a0a0ed7bc9868be9fbaa">ELogLevel::Warning</a>] = <span class="stringliteral">&quot;[Warning]&quot;</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_variable" href="class_log_1_1_logger.html#a24564985683c1647977475630befedf2">ToLogLevelStringTable</a>[<a class="code hl_enumvalue" href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebeaa902b0d55fddef6f8d651fe1035b7d4bd">ELogLevel::Error</a>] = <span class="stringliteral">&quot;[Error]&quot;</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_variable" href="class_log_1_1_logger.html#a24564985683c1647977475630befedf2">ToLogLevelStringTable</a>[<a class="code hl_enumvalue" href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebeaa278d01e5af56273bae1bb99a98b370cd">ELogLevel::Critical</a>] = <span class="stringliteral">&quot;[Critical]&quot;</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_variable" href="class_log_1_1_logger.html#a24564985683c1647977475630befedf2">ToLogLevelStringTable</a>[<a class="code hl_enumvalue" href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebeaa4059b0251f66a18cb56f544728796875">ELogLevel::Info</a>] = <span class="stringliteral">&quot;[Info]&quot;</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_log_1_1_logger.html#a2a67afade0f9c3c20a63b7d65fd8d536">   39</a></span><a class="code hl_class" href="class_log_1_1_logger.html">Log::Logger</a>&amp; <a class="code hl_function" href="class_log_1_1_logger.html#a2a67afade0f9c3c20a63b7d65fd8d536">Log::Logger::GetInstance</a>()</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">static</span> <a class="code hl_function" href="class_log_1_1_logger.html#aba457b540e11255a7e477ec7e2dd219d">Logger</a> log;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">return</span> log;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_log_1_1_logger.html#a6f9ed9c24db66c09cd4f7b0cf4f0e913">   46</a></span><a class="code hl_function" href="class_log_1_1_logger.html#a6f9ed9c24db66c09cd4f7b0cf4f0e913">Log::Logger::~Logger</a>()</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_log_1_1_logger.html#a114ae91fb1310592446ba4e2ace7c762">   52</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_log_1_1_logger.html#a114ae91fb1310592446ba4e2ace7c762">Log::Logger::Initialize</a>(<span class="keyword">const</span> std::string&amp; outputFile)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">//스레드 안정성 확보할것</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_variable" href="class_log_1_1_logger.html#ae3bb62f6276cffa8d5ff383d6623c1c9">Ofstream</a>.open(outputFile);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_log_1_1_logger.html#ae3bb62f6276cffa8d5ff383d6623c1c9">Ofstream</a>.is_open())</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="comment">//파일열기실패;</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_variable" href="class_log_1_1_logger.html#ad8f90ad4c86e91dae51d4070ca8407c0">ValidState</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_log_1_1_logger.html#a0cc135f81f663184f5548d47ac2d7814">   66</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_log_1_1_logger.html#a0cc135f81f663184f5548d47ac2d7814">Log::Logger::Log</a>(<a class="code hl_enumeration" href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebea">ELogLevel</a> level, <span class="keyword">const</span> std::string&amp; category, <span class="keyword">const</span> std::string&amp; message)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    std::stringstream log;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    log &lt;&lt; <a class="code hl_variable" href="class_log_1_1_logger.html#a24564985683c1647977475630befedf2">ToLogLevelStringTable</a>[level] &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; category &lt;&lt;<span class="stringliteral">&quot;]&quot;</span> &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; message &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        std::lock_guard&lt;std::mutex&gt; lock_guard(<a class="code hl_variable" href="class_log_1_1_logger.html#afe858da280d12dcb6dae1a49ba1e5083">LogMutex</a>);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <a class="code hl_variable" href="class_log_1_1_logger.html#ae3bb62f6276cffa8d5ff383d6623c1c9">Ofstream</a>.write(log.str().c_str(), log.str().size());</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; callback : <a class="code hl_variable" href="class_log_1_1_logger.html#a2ecb1d8b4b92591454b475f3095e05a3">CallbackVector</a>)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            callback(log.str());</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+</div>
+<div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div><div class="ttdoc">싱글턴(Singleton) 패턴을 사용한 로거 클래스를 정의합니다.</div></div>
+<div class="ttc" id="aclass_log_1_1_logger_html"><div class="ttname"><a href="class_log_1_1_logger.html">Log::Logger</a></div><div class="ttdoc">싱글턴 로거 클래스입니다. 파일 및 콜백으로 로그를 출력합니다.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00039">Logger.h:40</a></div></div>
+<div class="ttc" id="aclass_log_1_1_logger_html_a0cc135f81f663184f5548d47ac2d7814"><div class="ttname"><a href="class_log_1_1_logger.html#a0cc135f81f663184f5548d47ac2d7814">Log::Logger::Log</a></div><div class="ttdeci">void Log(ELogLevel level, const std::string &amp;category, const std::string &amp;message)</div><div class="ttdoc">지정된 레벨과 카테고리로 로그 메시지를 기록합니다.</div><div class="ttdef"><b>Definition</b> <a href="#l00066">Logger.cpp:66</a></div></div>
+<div class="ttc" id="aclass_log_1_1_logger_html_a114ae91fb1310592446ba4e2ace7c762"><div class="ttname"><a href="class_log_1_1_logger.html#a114ae91fb1310592446ba4e2ace7c762">Log::Logger::Initialize</a></div><div class="ttdeci">bool Initialize(const std::string &amp;outputFile)</div><div class="ttdoc">로거를 초기화합니다. 로그 파일을 열고 상태를 유효하게 설정합니다.</div><div class="ttdef"><b>Definition</b> <a href="#l00052">Logger.cpp:52</a></div></div>
+<div class="ttc" id="aclass_log_1_1_logger_html_a1c1822d66a5f0eb86b539af5e52e6d0e"><div class="ttname"><a href="class_log_1_1_logger.html#a1c1822d66a5f0eb86b539af5e52e6d0e">Log::Logger::IsValid</a></div><div class="ttdeci">bool IsValid() const</div><div class="ttdoc">현재 로거가 유효한 상태인지(초기화되었는지) 확인합니다.</div><div class="ttdef"><b>Definition</b> <a href="#l00023">Logger.cpp:23</a></div></div>
+<div class="ttc" id="aclass_log_1_1_logger_html_a1ca2186930627197427e795aa91690d6"><div class="ttname"><a href="class_log_1_1_logger.html#a1ca2186930627197427e795aa91690d6">Log::Logger::RegisterCallback</a></div><div class="ttdeci">void RegisterCallback(std::function&lt; void(const std::string &amp;)&gt; callback)</div><div class="ttdoc">로그 메시지가 생성될 때 호출될 콜백 함수를 등록합니다.</div><div class="ttdef"><b>Definition</b> <a href="#l00013">Logger.cpp:13</a></div></div>
+<div class="ttc" id="aclass_log_1_1_logger_html_a24564985683c1647977475630befedf2"><div class="ttname"><a href="class_log_1_1_logger.html#a24564985683c1647977475630befedf2">Log::Logger::ToLogLevelStringTable</a></div><div class="ttdeci">std::unordered_map&lt; ELogLevel, std::string &gt; ToLogLevelStringTable</div><div class="ttdoc">ELogLevel 열거형을 문자열로 변환하기 위한 매핑 테이블.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00107">Logger.h:107</a></div></div>
+<div class="ttc" id="aclass_log_1_1_logger_html_a2a67afade0f9c3c20a63b7d65fd8d536"><div class="ttname"><a href="class_log_1_1_logger.html#a2a67afade0f9c3c20a63b7d65fd8d536">Log::Logger::GetInstance</a></div><div class="ttdeci">static Logger &amp; GetInstance()</div><div class="ttdoc">Logger의 유일한 인스턴스를 반환합니다.</div><div class="ttdef"><b>Definition</b> <a href="#l00039">Logger.cpp:39</a></div></div>
+<div class="ttc" id="aclass_log_1_1_logger_html_a2ecb1d8b4b92591454b475f3095e05a3"><div class="ttname"><a href="class_log_1_1_logger.html#a2ecb1d8b4b92591454b475f3095e05a3">Log::Logger::CallbackVector</a></div><div class="ttdeci">std::vector&lt; std::function&lt; void(const std::string &amp;)&gt; &gt; CallbackVector</div><div class="ttdoc">등록된 콜백 함수들을 저장하는 벡터.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00101">Logger.h:101</a></div></div>
+<div class="ttc" id="aclass_log_1_1_logger_html_a6f9ed9c24db66c09cd4f7b0cf4f0e913"><div class="ttname"><a href="class_log_1_1_logger.html#a6f9ed9c24db66c09cd4f7b0cf4f0e913">Log::Logger::~Logger</a></div><div class="ttdeci">~Logger()</div><div class="ttdoc">Logger 소멸자입니다.</div><div class="ttdef"><b>Definition</b> <a href="#l00046">Logger.cpp:46</a></div></div>
+<div class="ttc" id="aclass_log_1_1_logger_html_aba457b540e11255a7e477ec7e2dd219d"><div class="ttname"><a href="class_log_1_1_logger.html#aba457b540e11255a7e477ec7e2dd219d">Log::Logger::Logger</a></div><div class="ttdeci">Logger()</div><div class="ttdoc">private 생성자 (싱글턴 패턴).</div><div class="ttdef"><b>Definition</b> <a href="#l00028">Logger.cpp:28</a></div></div>
+<div class="ttc" id="aclass_log_1_1_logger_html_ad8f90ad4c86e91dae51d4070ca8407c0"><div class="ttname"><a href="class_log_1_1_logger.html#ad8f90ad4c86e91dae51d4070ca8407c0">Log::Logger::ValidState</a></div><div class="ttdeci">bool ValidState</div><div class="ttdoc">로거의 현재 상태 (Initialize가 성공적으로 호출되었는지 여부).</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00113">Logger.h:113</a></div></div>
+<div class="ttc" id="aclass_log_1_1_logger_html_ae3bb62f6276cffa8d5ff383d6623c1c9"><div class="ttname"><a href="class_log_1_1_logger.html#ae3bb62f6276cffa8d5ff383d6623c1c9">Log::Logger::Ofstream</a></div><div class="ttdeci">std::ofstream Ofstream</div><div class="ttdoc">로그 파일 출력을 위한 파일 스트림 객체.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00104">Logger.h:104</a></div></div>
+<div class="ttc" id="aclass_log_1_1_logger_html_afe858da280d12dcb6dae1a49ba1e5083"><div class="ttname"><a href="class_log_1_1_logger.html#afe858da280d12dcb6dae1a49ba1e5083">Log::Logger::LogMutex</a></div><div class="ttdeci">std::mutex LogMutex</div><div class="ttdoc">Log() 함수 내부의 동기화를 위한 뮤텍스 객체.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00110">Logger.h:110</a></div></div>
+<div class="ttc" id="anamespace_log_html_a91ffbf64c90bd159da8cd8f872d7ebea"><div class="ttname"><a href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebea">Log::ELogLevel</a></div><div class="ttdeci">ELogLevel</div><div class="ttdoc">로그 메시지의 심각도 수준을 나타내는 열거형입니다.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00025">Logger.h:26</a></div></div>
+<div class="ttc" id="anamespace_log_html_a91ffbf64c90bd159da8cd8f872d7ebeaa0eaadb4fcb48a0a0ed7bc9868be9fbaa"><div class="ttname"><a href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebeaa0eaadb4fcb48a0a0ed7bc9868be9fbaa">Log::ELogLevel::Warning</a></div><div class="ttdeci">@ Warning</div><div class="ttdoc">경고성 로그. 잠재적인 문제를 나타내지만 에러는 아닙니다.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00028">Logger.h:28</a></div></div>
+<div class="ttc" id="anamespace_log_html_a91ffbf64c90bd159da8cd8f872d7ebeaa278d01e5af56273bae1bb99a98b370cd"><div class="ttname"><a href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebeaa278d01e5af56273bae1bb99a98b370cd">Log::ELogLevel::Critical</a></div><div class="ttdeci">@ Critical</div><div class="ttdoc">치명적인 오류 로그. 프로그램 실행을 중단시킬 수 있는 심각한 오류입니다.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00030">Logger.h:30</a></div></div>
+<div class="ttc" id="anamespace_log_html_a91ffbf64c90bd159da8cd8f872d7ebeaa4059b0251f66a18cb56f544728796875"><div class="ttname"><a href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebeaa4059b0251f66a18cb56f544728796875">Log::ELogLevel::Info</a></div><div class="ttdeci">@ Info</div><div class="ttdoc">정보성 로그. 일반적인 진행 상황을 나타냅니다.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00027">Logger.h:27</a></div></div>
+<div class="ttc" id="anamespace_log_html_a91ffbf64c90bd159da8cd8f872d7ebeaa902b0d55fddef6f8d651fe1035b7d4bd"><div class="ttname"><a href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebeaa902b0d55fddef6f8d651fe1035b7d4bd">Log::ELogLevel::Error</a></div><div class="ttdeci">@ Error</div><div class="ttdoc">오류 로그. 프로그램 실행에 영향을 미치는 오류를 나타냅니다.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00029">Logger.h:29</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a href="dir_c3309224b885f37fdf8bcc14bb189a11.html">Room-for-Two</a></li><li class="navelem"><a href="dir_8bbc63da8a11c85b8922690fd6ee2527.html">Room-For-Two</a></li><li class="navelem"><a href="dir_39cee5994962fc54cf3bbdd5f9b5a8ac.html">Logger</a></li><li class="navelem"><a href="_logger_8cpp.html">Logger.cpp</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

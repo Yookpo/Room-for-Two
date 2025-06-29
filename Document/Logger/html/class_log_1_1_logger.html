@@ -1,0 +1,671 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logger: Log::Logger 클래스 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logger<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','검색',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_log_1_1_logger.html','','class_log_1_1_logger-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Log::Logger 클래스 참조</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>싱글턴 로거 클래스입니다. 파일 및 콜백으로 로그를 출력합니다.  
+ <a href="#details">더 자세히 ...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_logger_8h_source.html">Logger.h</a>&gt;</code></p>
+<div class="dynheader">
+Log::Logger에 대한 협력 다이어그램:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_log_1_1_logger__coll__graph.png" border="0" usemap="#a_log_1_1_logger_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_log_1_1_logger_coll__map" id="a_log_1_1_logger_coll__map">
+<area shape="rect" title="싱글턴 로거 클래스입니다. 파일 및 콜백으로 로그를 출력합니다." alt="" coords="5,5,160,309"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 멤버 함수</h2></td></tr>
+<tr class="memitem:a6f9ed9c24db66c09cd4f7b0cf4f0e913" id="r_a6f9ed9c24db66c09cd4f7b0cf4f0e913"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f9ed9c24db66c09cd4f7b0cf4f0e913">~Logger</a> ()</td></tr>
+<tr class="memdesc:a6f9ed9c24db66c09cd4f7b0cf4f0e913"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_log_1_1_logger.html" title="싱글턴 로거 클래스입니다. 파일 및 콜백으로 로그를 출력합니다.">Logger</a> 소멸자입니다.  <br /></td></tr>
+<tr class="memitem:a114ae91fb1310592446ba4e2ace7c762" id="r_a114ae91fb1310592446ba4e2ace7c762"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a114ae91fb1310592446ba4e2ace7c762">Initialize</a> (const std::string &amp;outputFile)</td></tr>
+<tr class="memdesc:a114ae91fb1310592446ba4e2ace7c762"><td class="mdescLeft">&#160;</td><td class="mdescRight">로거를 초기화합니다. 로그 파일을 열고 상태를 유효하게 설정합니다.  <br /></td></tr>
+<tr class="memitem:a0cc135f81f663184f5548d47ac2d7814" id="r_a0cc135f81f663184f5548d47ac2d7814"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0cc135f81f663184f5548d47ac2d7814">Log</a> (<a class="el" href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebea">ELogLevel</a> level, const std::string &amp;category, const std::string &amp;message)</td></tr>
+<tr class="memdesc:a0cc135f81f663184f5548d47ac2d7814"><td class="mdescLeft">&#160;</td><td class="mdescRight">지정된 레벨과 카테고리로 로그 메시지를 기록합니다.  <br /></td></tr>
+<tr class="memitem:a1ca2186930627197427e795aa91690d6" id="r_a1ca2186930627197427e795aa91690d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ca2186930627197427e795aa91690d6">RegisterCallback</a> (std::function&lt; void(const std::string &amp;)&gt; callback)</td></tr>
+<tr class="memdesc:a1ca2186930627197427e795aa91690d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">로그 메시지가 생성될 때 호출될 콜백 함수를 등록합니다.  <br /></td></tr>
+<tr class="memitem:afd0ce818f7198225f6521d3ea7b1372c" id="r_afd0ce818f7198225f6521d3ea7b1372c"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:afd0ce818f7198225f6521d3ea7b1372c template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd0ce818f7198225f6521d3ea7b1372c">RegisterCallback</a> (T *ob, void(T::*callback)(const std::string &amp;))</td></tr>
+<tr class="memdesc:afd0ce818f7198225f6521d3ea7b1372c"><td class="mdescLeft">&#160;</td><td class="mdescRight">특정 객체의 멤버 함수를 콜백으로 등록하기 위한 템플릿 헬퍼 함수입니다.  <br /></td></tr>
+<tr class="memitem:a1c1822d66a5f0eb86b539af5e52e6d0e" id="r_a1c1822d66a5f0eb86b539af5e52e6d0e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c1822d66a5f0eb86b539af5e52e6d0e">IsValid</a> () const</td></tr>
+<tr class="memdesc:a1c1822d66a5f0eb86b539af5e52e6d0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">현재 로거가 유효한 상태인지(초기화되었는지) 확인합니다.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+정적 Public 멤버 함수</h2></td></tr>
+<tr class="memitem:a2a67afade0f9c3c20a63b7d65fd8d536" id="r_a2a67afade0f9c3c20a63b7d65fd8d536"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_log_1_1_logger.html">Logger</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a67afade0f9c3c20a63b7d65fd8d536">GetInstance</a> ()</td></tr>
+<tr class="memdesc:a2a67afade0f9c3c20a63b7d65fd8d536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logger의 유일한 인스턴스를 반환합니다.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 멤버 함수</h2></td></tr>
+<tr class="memitem:aba457b540e11255a7e477ec7e2dd219d" id="r_aba457b540e11255a7e477ec7e2dd219d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba457b540e11255a7e477ec7e2dd219d">Logger</a> ()</td></tr>
+<tr class="memdesc:aba457b540e11255a7e477ec7e2dd219d"><td class="mdescLeft">&#160;</td><td class="mdescRight">private 생성자 (싱글턴 패턴).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 속성</h2></td></tr>
+<tr class="memitem:a2ecb1d8b4b92591454b475f3095e05a3" id="r_a2ecb1d8b4b92591454b475f3095e05a3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::function&lt; void(const std::string &amp;)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ecb1d8b4b92591454b475f3095e05a3">CallbackVector</a></td></tr>
+<tr class="memdesc:a2ecb1d8b4b92591454b475f3095e05a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">등록된 콜백 함수들을 저장하는 벡터.  <br /></td></tr>
+<tr class="memitem:ae3bb62f6276cffa8d5ff383d6623c1c9" id="r_ae3bb62f6276cffa8d5ff383d6623c1c9"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3bb62f6276cffa8d5ff383d6623c1c9">Ofstream</a></td></tr>
+<tr class="memdesc:ae3bb62f6276cffa8d5ff383d6623c1c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">로그 파일 출력을 위한 파일 스트림 객체.  <br /></td></tr>
+<tr class="memitem:a24564985683c1647977475630befedf2" id="r_a24564985683c1647977475630befedf2"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebea">ELogLevel</a>, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24564985683c1647977475630befedf2">ToLogLevelStringTable</a></td></tr>
+<tr class="memdesc:a24564985683c1647977475630befedf2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebea" title="로그 메시지의 심각도 수준을 나타내는 열거형입니다.">ELogLevel</a> 열거형을 문자열로 변환하기 위한 매핑 테이블.  <br /></td></tr>
+<tr class="memitem:afe858da280d12dcb6dae1a49ba1e5083" id="r_afe858da280d12dcb6dae1a49ba1e5083"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe858da280d12dcb6dae1a49ba1e5083">LogMutex</a></td></tr>
+<tr class="memdesc:afe858da280d12dcb6dae1a49ba1e5083"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_log.html">Log()</a> 함수 내부의 동기화를 위한 뮤텍스 객체.  <br /></td></tr>
+<tr class="memitem:ad8f90ad4c86e91dae51d4070ca8407c0" id="r_ad8f90ad4c86e91dae51d4070ca8407c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8f90ad4c86e91dae51d4070ca8407c0">ValidState</a></td></tr>
+<tr class="memdesc:ad8f90ad4c86e91dae51d4070ca8407c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">로거의 현재 상태 (Initialize가 성공적으로 호출되었는지 여부).  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">상세한 설명</h2>
+<div class="textblock"><p>싱글턴 로거 클래스입니다. 파일 및 콜백으로 로그를 출력합니다. </p>
+<dl class="section warning"><dt>경고</dt><dd>이 클래스는 싱글턴이므로, 사용하기 전에 반드시 <a class="el" href="#a114ae91fb1310592446ba4e2ace7c762" title="로거를 초기화합니다. 로그 파일을 열고 상태를 유효하게 설정합니다.">Initialize()</a> 함수를 호출하여 초기화해야 합니다. </dd></dl>
+<dl class="section note"><dt>주의</dt><dd><a class="el" href="namespace_log.html">Log()</a> 함수는 뮤텍스를 통해 스레드에 안전하게(thread-safe) 설계되었습니다. </dd></dl>
+
+<p class="definition"><a class="el" href="_logger_8h_source.html">Logger.h</a> 파일의 <a class="el" href="_logger_8h_source.html#l00039">39</a> 번째 라인에서 정의되었습니다.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">생성자 &amp; 소멸자 문서화</h2>
+<a id="a6f9ed9c24db66c09cd4f7b0cf4f0e913" name="a6f9ed9c24db66c09cd4f7b0cf4f0e913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f9ed9c24db66c09cd4f7b0cf4f0e913">&#9670;&#160;</a></span>~Logger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Log::Logger::~Logger </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_log_1_1_logger.html" title="싱글턴 로거 클래스입니다. 파일 및 콜백으로 로그를 출력합니다.">Logger</a> 소멸자입니다. </p>
+<p>열려 있는 로그 파일을 닫습니다. </p>
+
+<p class="definition"><a class="el" href="_logger_8cpp_source.html">Logger.cpp</a> 파일의 <a class="el" href="_logger_8cpp_source.html#l00046">46</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>{</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aba457b540e11255a7e477ec7e2dd219d" name="aba457b540e11255a7e477ec7e2dd219d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba457b540e11255a7e477ec7e2dd219d">&#9670;&#160;</a></span>Logger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Log::Logger::Logger </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>private 생성자 (싱글턴 패턴). </p>
+
+<p class="definition"><a class="el" href="_logger_8cpp_source.html">Logger.cpp</a> 파일의 <a class="el" href="_logger_8cpp_source.html#l00028">28</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>    : <a class="code hl_variable" href="#ad8f90ad4c86e91dae51d4070ca8407c0">ValidState</a>(<span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   31</span>    </div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_variable" href="#a24564985683c1647977475630befedf2">ToLogLevelStringTable</a>[<a class="code hl_enumvalue" href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebeaa0eaadb4fcb48a0a0ed7bc9868be9fbaa">ELogLevel::Warning</a>] = <span class="stringliteral">&quot;[Warning]&quot;</span>;</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_variable" href="#a24564985683c1647977475630befedf2">ToLogLevelStringTable</a>[<a class="code hl_enumvalue" href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebeaa902b0d55fddef6f8d651fe1035b7d4bd">ELogLevel::Error</a>] = <span class="stringliteral">&quot;[Error]&quot;</span>;</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="#a24564985683c1647977475630befedf2">ToLogLevelStringTable</a>[<a class="code hl_enumvalue" href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebeaa278d01e5af56273bae1bb99a98b370cd">ELogLevel::Critical</a>] = <span class="stringliteral">&quot;[Critical]&quot;</span>;</div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_variable" href="#a24564985683c1647977475630befedf2">ToLogLevelStringTable</a>[<a class="code hl_enumvalue" href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebeaa4059b0251f66a18cb56f544728796875">ELogLevel::Info</a>] = <span class="stringliteral">&quot;[Info]&quot;</span>;</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>}</div>
+<div class="ttc" id="aclass_log_1_1_logger_html_a24564985683c1647977475630befedf2"><div class="ttname"><a href="#a24564985683c1647977475630befedf2">Log::Logger::ToLogLevelStringTable</a></div><div class="ttdeci">std::unordered_map&lt; ELogLevel, std::string &gt; ToLogLevelStringTable</div><div class="ttdoc">ELogLevel 열거형을 문자열로 변환하기 위한 매핑 테이블.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00107">Logger.h:107</a></div></div>
+<div class="ttc" id="aclass_log_1_1_logger_html_ad8f90ad4c86e91dae51d4070ca8407c0"><div class="ttname"><a href="#ad8f90ad4c86e91dae51d4070ca8407c0">Log::Logger::ValidState</a></div><div class="ttdeci">bool ValidState</div><div class="ttdoc">로거의 현재 상태 (Initialize가 성공적으로 호출되었는지 여부).</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00113">Logger.h:113</a></div></div>
+<div class="ttc" id="anamespace_log_html_a91ffbf64c90bd159da8cd8f872d7ebeaa0eaadb4fcb48a0a0ed7bc9868be9fbaa"><div class="ttname"><a href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebeaa0eaadb4fcb48a0a0ed7bc9868be9fbaa">Log::ELogLevel::Warning</a></div><div class="ttdeci">@ Warning</div><div class="ttdoc">경고성 로그. 잠재적인 문제를 나타내지만 에러는 아닙니다.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00028">Logger.h:28</a></div></div>
+<div class="ttc" id="anamespace_log_html_a91ffbf64c90bd159da8cd8f872d7ebeaa278d01e5af56273bae1bb99a98b370cd"><div class="ttname"><a href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebeaa278d01e5af56273bae1bb99a98b370cd">Log::ELogLevel::Critical</a></div><div class="ttdeci">@ Critical</div><div class="ttdoc">치명적인 오류 로그. 프로그램 실행을 중단시킬 수 있는 심각한 오류입니다.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00030">Logger.h:30</a></div></div>
+<div class="ttc" id="anamespace_log_html_a91ffbf64c90bd159da8cd8f872d7ebeaa4059b0251f66a18cb56f544728796875"><div class="ttname"><a href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebeaa4059b0251f66a18cb56f544728796875">Log::ELogLevel::Info</a></div><div class="ttdeci">@ Info</div><div class="ttdoc">정보성 로그. 일반적인 진행 상황을 나타냅니다.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00027">Logger.h:27</a></div></div>
+<div class="ttc" id="anamespace_log_html_a91ffbf64c90bd159da8cd8f872d7ebeaa902b0d55fddef6f8d651fe1035b7d4bd"><div class="ttname"><a href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebeaa902b0d55fddef6f8d651fe1035b7d4bd">Log::ELogLevel::Error</a></div><div class="ttdeci">@ Error</div><div class="ttdoc">오류 로그. 프로그램 실행에 영향을 미치는 오류를 나타냅니다.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00029">Logger.h:29</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_log_1_1_logger_aba457b540e11255a7e477ec7e2dd219d_icgraph.png" border="0" usemap="#aclass_log_1_1_logger_aba457b540e11255a7e477ec7e2dd219d_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_log_1_1_logger_aba457b540e11255a7e477ec7e2dd219d_icgraph" id="aclass_log_1_1_logger_aba457b540e11255a7e477ec7e2dd219d_icgraph">
+<area shape="rect" title="private 생성자 (싱글턴 패턴)." alt="" coords="222,5,358,32"/>
+<area shape="rect" href="class_log_1_1_logger.html#a2a67afade0f9c3c20a63b7d65fd8d536" title="Logger의 유일한 인스턴스를 반환합니다." alt="" coords="5,5,174,32"/>
+<area shape="poly" title=" " alt="" coords="206,21,174,21,174,16,206,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">멤버 함수 문서화</h2>
+<a id="a2a67afade0f9c3c20a63b7d65fd8d536" name="a2a67afade0f9c3c20a63b7d65fd8d536"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a67afade0f9c3c20a63b7d65fd8d536">&#9670;&#160;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_log_1_1_logger.html">Log::Logger</a> &amp; Log::Logger::GetInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logger의 유일한 인스턴스를 반환합니다. </p>
+<dl class="section return"><dt>반환값</dt><dd><a class="el" href="class_log_1_1_logger.html" title="싱글턴 로거 클래스입니다. 파일 및 콜백으로 로그를 출력합니다.">Logger</a> 클래스의 싱글턴 인스턴스에 대한 참조. </dd></dl>
+
+<p class="definition"><a class="el" href="_logger_8cpp_source.html">Logger.cpp</a> 파일의 <a class="el" href="_logger_8cpp_source.html#l00039">39</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keyword">static</span> <a class="code hl_function" href="#aba457b540e11255a7e477ec7e2dd219d">Logger</a> log;</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">return</span> log;</div>
+<div class="line"><span class="lineno">   44</span>}</div>
+<div class="ttc" id="aclass_log_1_1_logger_html_aba457b540e11255a7e477ec7e2dd219d"><div class="ttname"><a href="#aba457b540e11255a7e477ec7e2dd219d">Log::Logger::Logger</a></div><div class="ttdeci">Logger()</div><div class="ttdoc">private 생성자 (싱글턴 패턴).</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00028">Logger.cpp:28</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_log_1_1_logger_a2a67afade0f9c3c20a63b7d65fd8d536_cgraph.png" border="0" usemap="#aclass_log_1_1_logger_a2a67afade0f9c3c20a63b7d65fd8d536_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_log_1_1_logger_a2a67afade0f9c3c20a63b7d65fd8d536_cgraph" id="aclass_log_1_1_logger_a2a67afade0f9c3c20a63b7d65fd8d536_cgraph">
+<area shape="rect" title="Logger의 유일한 인스턴스를 반환합니다." alt="" coords="5,5,174,32"/>
+<area shape="rect" href="class_log_1_1_logger.html#aba457b540e11255a7e477ec7e2dd219d" title="private 생성자 (싱글턴 패턴)." alt="" coords="222,5,358,32"/>
+<area shape="poly" title=" " alt="" coords="174,16,206,16,206,21,174,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a114ae91fb1310592446ba4e2ace7c762" name="a114ae91fb1310592446ba4e2ace7c762"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a114ae91fb1310592446ba4e2ace7c762">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Log::Logger::Initialize </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>outputFile</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>로거를 초기화합니다. 로그 파일을 열고 상태를 유효하게 설정합니다. </p>
+<p>이 함수는 로깅을 시작하기 전에 단 한 번만 호출되어야 합니다. </p><dl class="params"><dt>매개변수</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">outputFile</td><td>로그를 기록할 파일의 경로. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>반환값</dt><dd>초기화에 성공하면 true, 실패하면(파일 열기 실패 등) false를 반환합니다. </dd></dl>
+
+<p class="definition"><a class="el" href="_logger_8cpp_source.html">Logger.cpp</a> 파일의 <a class="el" href="_logger_8cpp_source.html#l00052">52</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{</div>
+<div class="line"><span class="lineno">   54</span>    <span class="comment">//스레드 안정성 확보할것</span></div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_variable" href="#ae3bb62f6276cffa8d5ff383d6623c1c9">Ofstream</a>.open(outputFile);</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ae3bb62f6276cffa8d5ff383d6623c1c9">Ofstream</a>.is_open())</div>
+<div class="line"><span class="lineno">   58</span>    {</div>
+<div class="line"><span class="lineno">   59</span>        <span class="comment">//파일열기실패;</span></div>
+<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   61</span>    }</div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_variable" href="#ad8f90ad4c86e91dae51d4070ca8407c0">ValidState</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   64</span>}</div>
+<div class="ttc" id="aclass_log_1_1_logger_html_ae3bb62f6276cffa8d5ff383d6623c1c9"><div class="ttname"><a href="#ae3bb62f6276cffa8d5ff383d6623c1c9">Log::Logger::Ofstream</a></div><div class="ttdeci">std::ofstream Ofstream</div><div class="ttdoc">로그 파일 출력을 위한 파일 스트림 객체.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00104">Logger.h:104</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1c1822d66a5f0eb86b539af5e52e6d0e" name="a1c1822d66a5f0eb86b539af5e52e6d0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c1822d66a5f0eb86b539af5e52e6d0e">&#9670;&#160;</a></span>IsValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Log::Logger::IsValid </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>현재 로거가 유효한 상태인지(초기화되었는지) 확인합니다. </p>
+<dl class="section return"><dt>반환값</dt><dd>로거가 유효하면 true, 그렇지 않으면 false를 반환합니다. </dd></dl>
+
+<p class="definition"><a class="el" href="_logger_8cpp_source.html">Logger.cpp</a> 파일의 <a class="el" href="_logger_8cpp_source.html#l00023">23</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>{</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ad8f90ad4c86e91dae51d4070ca8407c0">ValidState</a>;</div>
+<div class="line"><span class="lineno">   26</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0cc135f81f663184f5548d47ac2d7814" name="a0cc135f81f663184f5548d47ac2d7814"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cc135f81f663184f5548d47ac2d7814">&#9670;&#160;</a></span>Log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Log::Logger::Log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebea">ELogLevel</a></td>          <td class="paramname"><span class="paramname"><em>level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>category</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>지정된 레벨과 카테고리로 로그 메시지를 기록합니다. </p>
+<p>이 함수는 스레드에 안전합니다.</p>
+<p>[level][category]:message 형태로 메시지를 기록합니다. </p><dl class="params"><dt>매개변수</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>로그의 심각도 수준 (<a class="el" href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebea" title="로그 메시지의 심각도 수준을 나타내는 열거형입니다.">ELogLevel</a>). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">category</td><td>로그의 분류 (예: "Network", "Renderer"). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>기록할 실제 로그 내용. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"><a class="el" href="_logger_8cpp_source.html">Logger.cpp</a> 파일의 <a class="el" href="_logger_8cpp_source.html#l00066">66</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>{</div>
+<div class="line"><span class="lineno">   68</span>    </div>
+<div class="line"><span class="lineno">   69</span>    std::stringstream log;</div>
+<div class="line"><span class="lineno">   70</span>        </div>
+<div class="line"><span class="lineno">   71</span>    log &lt;&lt; <a class="code hl_variable" href="#a24564985683c1647977475630befedf2">ToLogLevelStringTable</a>[level] &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; category &lt;&lt;<span class="stringliteral">&quot;]&quot;</span> &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; message &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    {</div>
+<div class="line"><span class="lineno">   75</span>        std::lock_guard&lt;std::mutex&gt; lock_guard(<a class="code hl_variable" href="#afe858da280d12dcb6dae1a49ba1e5083">LogMutex</a>);</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>        <a class="code hl_variable" href="#ae3bb62f6276cffa8d5ff383d6623c1c9">Ofstream</a>.write(log.str().c_str(), log.str().size());</div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; callback : <a class="code hl_variable" href="#a2ecb1d8b4b92591454b475f3095e05a3">CallbackVector</a>)</div>
+<div class="line"><span class="lineno">   79</span>        {</div>
+<div class="line"><span class="lineno">   80</span>            callback(log.str());</div>
+<div class="line"><span class="lineno">   81</span>        }</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>    }</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>}</div>
+<div class="ttc" id="aclass_log_1_1_logger_html_a2ecb1d8b4b92591454b475f3095e05a3"><div class="ttname"><a href="#a2ecb1d8b4b92591454b475f3095e05a3">Log::Logger::CallbackVector</a></div><div class="ttdeci">std::vector&lt; std::function&lt; void(const std::string &amp;)&gt; &gt; CallbackVector</div><div class="ttdoc">등록된 콜백 함수들을 저장하는 벡터.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00101">Logger.h:101</a></div></div>
+<div class="ttc" id="aclass_log_1_1_logger_html_afe858da280d12dcb6dae1a49ba1e5083"><div class="ttname"><a href="#afe858da280d12dcb6dae1a49ba1e5083">Log::Logger::LogMutex</a></div><div class="ttdeci">std::mutex LogMutex</div><div class="ttdoc">Log() 함수 내부의 동기화를 위한 뮤텍스 객체.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8h_source.html#l00110">Logger.h:110</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1ca2186930627197427e795aa91690d6" name="a1ca2186930627197427e795aa91690d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ca2186930627197427e795aa91690d6">&#9670;&#160;</a></span>RegisterCallback() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Log::Logger::RegisterCallback </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(const std::string &amp;)&gt;</td>          <td class="paramname"><span class="paramname"><em>callback</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>로그 메시지가 생성될 때 호출될 콜백 함수를 등록합니다. </p>
+<p>UI 업데이트나 다른 로깅 시스템으로 로그를 전달할 때 유용합니다. </p><dl class="params"><dt>매개변수</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>std::function 형태의 콜백 함수. 포맷팅된 로그 문자열을 인자로 받습니다. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"><a class="el" href="_logger_8cpp_source.html">Logger.cpp</a> 파일의 <a class="el" href="_logger_8cpp_source.html#l00013">13</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>{</div>
+<div class="line"><span class="lineno">   15</span> </div>
+<div class="line"><span class="lineno">   16</span>    {</div>
+<div class="line"><span class="lineno">   17</span>        std::lock_guard&lt;std::mutex&gt; lock_guard(<a class="code hl_variable" href="#afe858da280d12dcb6dae1a49ba1e5083">LogMutex</a>);</div>
+<div class="line"><span class="lineno">   18</span>        <a class="code hl_variable" href="#a2ecb1d8b4b92591454b475f3095e05a3">CallbackVector</a>.push_back(std::move(callback));</div>
+<div class="line"><span class="lineno">   19</span>    }</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_log_1_1_logger_a1ca2186930627197427e795aa91690d6_icgraph.png" border="0" usemap="#aclass_log_1_1_logger_a1ca2186930627197427e795aa91690d6_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_log_1_1_logger_a1ca2186930627197427e795aa91690d6_icgraph" id="aclass_log_1_1_logger_a1ca2186930627197427e795aa91690d6_icgraph">
+<area shape="rect" title="로그 메시지가 생성될 때 호출될 콜백 함수를 등록합니다." alt="" coords="251,5,448,32"/>
+<area shape="rect" href="class_log_1_1_logger.html#afd0ce818f7198225f6521d3ea7b1372c" title="특정 객체의 멤버 함수를 콜백으로 등록하기 위한 템플릿 헬퍼 함수입니다." alt="" coords="5,5,203,32"/>
+<area shape="poly" title=" " alt="" coords="235,21,203,21,203,16,235,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afd0ce818f7198225f6521d3ea7b1372c" name="afd0ce818f7198225f6521d3ea7b1372c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd0ce818f7198225f6521d3ea7b1372c">&#9670;&#160;</a></span>RegisterCallback() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Log::Logger::RegisterCallback </td>
+          <td>(</td>
+          <td class="paramtype">T *</td>          <td class="paramname"><span class="paramname"><em>ob</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(T::*</td>          <td class="paramname"><span class="paramname"><em>callback&#160;</em></span>)(const std::string &amp;)&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>특정 객체의 멤버 함수를 콜백으로 등록하기 위한 템플릿 헬퍼 함수입니다. </p>
+<p>멤버 함수 포인터를 std::function으로 변환하여 콜백 벡터에 등록합니다.</p>
+<dl class="tparams"><dt>템플릿 파라메터</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>콜백 멤버 함수를 소유한 객체의 클래스 타입. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>매개변수</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ob</td><td>콜백을 호출할 객체의 포인터. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>등록할 멤버 함수 포인터.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>std::bind를 사용하여 멤버 함수와 객체 인스턴스를 바인딩합니다. static_assert를 통해 T가 반드시 클래스 타입인지 컴파일 타임에 확인합니다. </p>
+
+<p class="definition"><a class="el" href="_logger_8h_source.html">Logger.h</a> 파일의 <a class="el" href="_logger_8h_source.html#l00122">122</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>    {</div>
+<div class="line"><span class="lineno">  124</span>        <span class="keyword">static_assert</span>(std::is_class_v&lt;T&gt;, <span class="stringliteral">&quot;T는 반드시 클래스 타입이어야합니다.&quot;</span>);</div>
+<div class="line"><span class="lineno">  125</span>        <a class="code hl_function" href="#a1ca2186930627197427e795aa91690d6">RegisterCallback</a>(std::bind(callback, ob, std::placeholders::_1));</div>
+<div class="line"><span class="lineno">  126</span>    }</div>
+<div class="ttc" id="aclass_log_1_1_logger_html_a1ca2186930627197427e795aa91690d6"><div class="ttname"><a href="#a1ca2186930627197427e795aa91690d6">Log::Logger::RegisterCallback</a></div><div class="ttdeci">void RegisterCallback(std::function&lt; void(const std::string &amp;)&gt; callback)</div><div class="ttdoc">로그 메시지가 생성될 때 호출될 콜백 함수를 등록합니다.</div><div class="ttdef"><b>Definition</b> <a href="_logger_8cpp_source.html#l00013">Logger.cpp:13</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_log_1_1_logger_afd0ce818f7198225f6521d3ea7b1372c_cgraph.png" border="0" usemap="#aclass_log_1_1_logger_afd0ce818f7198225f6521d3ea7b1372c_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_log_1_1_logger_afd0ce818f7198225f6521d3ea7b1372c_cgraph" id="aclass_log_1_1_logger_afd0ce818f7198225f6521d3ea7b1372c_cgraph">
+<area shape="rect" title="특정 객체의 멤버 함수를 콜백으로 등록하기 위한 템플릿 헬퍼 함수입니다." alt="" coords="5,5,203,32"/>
+<area shape="rect" href="class_log_1_1_logger.html#a1ca2186930627197427e795aa91690d6" title="로그 메시지가 생성될 때 호출될 콜백 함수를 등록합니다." alt="" coords="251,5,448,32"/>
+<area shape="poly" title=" " alt="" coords="203,16,235,16,235,21,203,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">멤버 데이터 문서화</h2>
+<a id="a2ecb1d8b4b92591454b475f3095e05a3" name="a2ecb1d8b4b92591454b475f3095e05a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ecb1d8b4b92591454b475f3095e05a3">&#9670;&#160;</a></span>CallbackVector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::function&lt;void(const std::string&amp;)&gt; &gt; Log::Logger::CallbackVector</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>등록된 콜백 함수들을 저장하는 벡터. </p>
+
+<p class="definition"><a class="el" href="_logger_8h_source.html">Logger.h</a> 파일의 <a class="el" href="_logger_8h_source.html#l00101">101</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="afe858da280d12dcb6dae1a49ba1e5083" name="afe858da280d12dcb6dae1a49ba1e5083"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe858da280d12dcb6dae1a49ba1e5083">&#9670;&#160;</a></span>LogMutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex Log::Logger::LogMutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="namespace_log.html">Log()</a> 함수 내부의 동기화를 위한 뮤텍스 객체. </p>
+
+<p class="definition"><a class="el" href="_logger_8h_source.html">Logger.h</a> 파일의 <a class="el" href="_logger_8h_source.html#l00110">110</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ae3bb62f6276cffa8d5ff383d6623c1c9" name="ae3bb62f6276cffa8d5ff383d6623c1c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3bb62f6276cffa8d5ff383d6623c1c9">&#9670;&#160;</a></span>Ofstream</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ofstream Log::Logger::Ofstream</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>로그 파일 출력을 위한 파일 스트림 객체. </p>
+
+<p class="definition"><a class="el" href="_logger_8h_source.html">Logger.h</a> 파일의 <a class="el" href="_logger_8h_source.html#l00104">104</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a24564985683c1647977475630befedf2" name="a24564985683c1647977475630befedf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24564985683c1647977475630befedf2">&#9670;&#160;</a></span>ToLogLevelStringTable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;<a class="el" href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebea">ELogLevel</a>, std::string&gt; Log::Logger::ToLogLevelStringTable</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="namespace_log.html#a91ffbf64c90bd159da8cd8f872d7ebea" title="로그 메시지의 심각도 수준을 나타내는 열거형입니다.">ELogLevel</a> 열거형을 문자열로 변환하기 위한 매핑 테이블. </p>
+
+<p class="definition"><a class="el" href="_logger_8h_source.html">Logger.h</a> 파일의 <a class="el" href="_logger_8h_source.html#l00107">107</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ad8f90ad4c86e91dae51d4070ca8407c0" name="ad8f90ad4c86e91dae51d4070ca8407c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8f90ad4c86e91dae51d4070ca8407c0">&#9670;&#160;</a></span>ValidState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Log::Logger::ValidState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>로거의 현재 상태 (Initialize가 성공적으로 호출되었는지 여부). </p>
+
+<p class="definition"><a class="el" href="_logger_8h_source.html">Logger.h</a> 파일의 <a class="el" href="_logger_8h_source.html#l00113">113</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<hr/>이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.:<ul>
+<li>C:/Users/dongd/source/repos/Room-for-Two/Room-For-Two/Logger/<a class="el" href="_logger_8h_source.html">Logger.h</a></li>
+<li>C:/Users/dongd/source/repos/Room-for-Two/Room-For-Two/Logger/<a class="el" href="_logger_8cpp_source.html">Logger.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespace_log.html">Log</a></li><li class="navelem"><a href="class_log_1_1_logger.html">Logger</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>
