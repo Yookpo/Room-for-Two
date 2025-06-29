@@ -3,15 +3,29 @@
  * @brief Win32 윈도우 생성 및 관리를 위한 Window 클래스를 선언합니다.
  * @author Yookpo
  * @date 2025-06-27
+ * @version 1.1
  */
 #pragma once
 
 #include <Windows.h>
 #include <string>
+#include <functional>
+
+/**
+ * @struct Event
+ * @brief Win32 메시지 정보를 캡슐화하여 이벤트 콜백 시스템에 전달하기 위한 구조체입니다.
+ */
+struct Event
+{
+	HWND   Hwnd;   ///< 메시지가 발생한 윈도우의 핸들입니다.
+	UINT   uMsg;   ///< 메시지의 종류를 나타내는 식별자입니다.
+	WPARAM wParam; ///< 메시지에 대한 추가 정보입니다. (WPARAM)
+	LPARAM lParam; ///< 메시지에 대한 추가 정보입니다. (LPARAM)
+};
 
 /**
  * @class Window
- * @brief Win32 API를 캡슐화하여 윈도우의 생성, 초기화, 메시지 처리를 담당하는 클래스.
+ * @brief Win32 API를 캡슐화하여 윈도우의 생성, 초기화, 메시지 처리를 담당하는 클래스입니다.
  * @details
  * 이 클래스는 객체 생성과 실제 윈도우 생성을 분리하는 2단계 초기화 패턴을 사용합니다.
  * 프레임워크의 핵심 구성 요소로, 렌더러나 입력 관리자 등 다른 모듈에
@@ -20,6 +34,12 @@
 class Window
 {
 public:
+	/**
+	 * @brief 이벤트 콜백 함수의 시그니처를 정의하는 타입 별칭입니다.
+	 * @details Event 구조체 참조를 인자로 받고, 반환 값은 없습니다.
+	 */
+	using EventCallbackFn = std::function<void(Event&)>;
+
 	/**
 	 * @brief Window 클래스의 생성자입니다.
 	 * @details 멤버 변수를 초기화하지만, 실제 윈도우를 생성하지는 않습니다.
@@ -64,6 +84,12 @@ public:
 	 */
 	HWND GetHWND() const { return Hwnd; }
 
+	/**
+	 * @brief 외부에서 이벤트 처리를 담당할 콜백 함수를 등록합니다.
+	 * @param[in] callback 윈도우 이벤트를 전달받을 `std::function` 객체입니다.
+	 */
+	void SetEventCallback(const EventCallbackFn& callback) { EventCallback = callback; }
+
 private:
 	/**
 	 * @brief 윈도우 클래스(WNDCLASSEX)를 Windows에 등록하는 내부 메서드입니다.
@@ -91,14 +117,24 @@ private:
 	 */
 	static LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
+	/**
+	 * @brief 실제 메시지를 처리하고 등록된 콜백으로 이벤트를 전달합니다.
+	 * @details WindowProc으로부터 메시지를 받아 Event 구조체로 래핑한 후,
+	 * SetEventCallback으로 등록된 콜백 함수를 호출하는 역할을 합니다.
+	 * @param uMsg 메시지의 종류를 나타내는 식별자입니다.
+	 * @param wParam 메시지에 대한 추가 정보입니다. (WPARAM)
+	 * @param lParam 메시지에 대한 추가 정보입니다. (LPARAM)
+	 * @return LRESULT 메시지 처리 결과입니다.
+	 */
 	LRESULT HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 private:
-	HWND		 Hwnd = nullptr;	  ///< 생성된 윈도우의 고유 핸들입니다.
-	HINSTANCE	 Hinstance = nullptr; ///< 애플리케이션의 인스턴스 핸들입니다.
-	int			 Width = 0;			  ///< 윈도우 클라이언트 영역의 너비입니다.
-	int			 Height = 0;		  ///< 윈도우 클라이언트 영역의 높이입니다.
-	std::wstring Title;				  ///< 윈도우의 제목입니다.
-	std::wstring ClassName;			  ///< 윈도우 클래스의 이름입니다.
-	bool		 IsClassRegistered;	  ///< 윈도우 클래스의 등록 성공 여부를 추적하는 플래그입니다.
+	HWND			Hwnd = nullptr;		 ///< 생성된 윈도우의 고유 핸들입니다.
+	HINSTANCE		Hinstance = nullptr; ///< 애플리케이션의 인스턴스 핸들입니다.
+	EventCallbackFn EventCallback;		 ///< 외부에서 등록한 이벤트 처리 콜백 함수입니다.
+	int				Width = 0;			 ///< 윈도우 클라이언트 영역의 너비입니다.
+	int				Height = 0;			 ///< 윈도우 클라이언트 영역의 높이입니다.
+	std::wstring	Title;				 ///< 윈도우의 제목입니다.
+	std::wstring	ClassName;			 ///< 윈도우 클래스의 이름입니다.
+	bool			IsClassRegistered;	 ///< 윈도우 클래스의 등록 성공 여부를 추적하는 플래그입니다.
 };

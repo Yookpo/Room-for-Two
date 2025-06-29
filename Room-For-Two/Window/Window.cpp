@@ -142,6 +142,14 @@ LRESULT CALLBACK Window::WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM 
 // 실제 메시지 처리는 이 멤버 함수에서 함
 LRESULT Window::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
+	// 이벤트가 발생하면, 등록된 콜백 함수를 호출
+	if (EventCallback)
+	{
+		Event e = { Hwnd, uMsg, wParam, lParam };
+		EventCallback(e);
+	}
+
+
 	switch (uMsg)
 	{
 		case WM_DESTROY:
