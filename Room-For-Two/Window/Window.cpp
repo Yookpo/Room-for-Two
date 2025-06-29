@@ -3,7 +3,7 @@
 
 // 생성자는 이제 멤버 변수를 안전한 기본값으로 초기화하는 역할만 합니다.
 Window::Window(HINSTANCE hInstance)
-	: Hinstance(hInstance), Hwnd(nullptr), Width(0), Height(0), IsClassRegistered(false)
+	: Hinstance(hInstance), Hwnd(nullptr), Width(0), Height(0), ClassName(L""), IsClassRegistered(false)
 {
 }
 
@@ -26,6 +26,8 @@ bool Window::Initialize(int width, int height, const std::wstring& title)
 	Width = width;
 	Height = height;
 	Title = title;
+
+	this->ClassName = L"Window Test";
 
 	if (!RegisterWindowClass())
 	{
@@ -115,7 +117,6 @@ bool Window::ProcessMessages()
 
 LRESULT CALLBACK Window::WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
-	// ... 이 부분의 코드는 이전과 동일합니다 ...
 	Window* pWindow = nullptr;
 
 	if (uMsg == WM_NCCREATE)
@@ -123,6 +124,7 @@ LRESULT CALLBACK Window::WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM 
 		CREATESTRUCT* pCreate = reinterpret_cast<CREATESTRUCT*>(lParam);
 		pWindow = reinterpret_cast<Window*>(pCreate->lpCreateParams);
 		SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG_PTR)pWindow);
+		pWindow->Hwnd = hWnd;
 	}
 	else
 	{
@@ -131,13 +133,23 @@ LRESULT CALLBACK Window::WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM 
 
 	if (pWindow)
 	{
-		switch (uMsg)
-		{
-			case WM_DESTROY:
-				PostQuitMessage(0);
-				return 0;
-		}
+		return pWindow->HandleMessage(uMsg, wParam, lParam);
 	}
 
 	return DefWindowProc(hWnd, uMsg, wParam, lParam);
+}
+
+// 실제 메시지 처리는 이 멤버 함수에서 함
+LRESULT Window::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+	switch (uMsg)
+	{
+		case WM_DESTROY:
+			PostQuitMessage(0);
+			return 0;
+
+			// 향후 WM_KEYDOWN, WM_MOUSEMOVE 등 다른 메시지들을 이곳에 추가
+	}
+
+	return DefWindowProc(Hwnd, uMsg, wParam, lParam);
 }

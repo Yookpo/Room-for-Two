@@ -1,7 +1,7 @@
 /**
  * @file window.h
  * @brief Win32 윈도우 생성 및 관리를 위한 Window 클래스를 선언합니다.
- * @author 엄기호
+ * @author Yookpo
  * @date 2025-06-27
  */
 #pragma once
@@ -90,6 +90,8 @@ private:
 	 * @return 메시지 처리 결과입니다. DefWindowProc을 호출하여 기본 처리를 위임할 수 있습니다.
 	 */
 	static LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+
+	LRESULT HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 private:
 	HWND		 Hwnd = nullptr;	  ///< 생성된 윈도우의 고유 핸들입니다.
