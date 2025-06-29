@@ -1,53 +1,90 @@
-// Main.cpp
+// Test.cpp
 #define WIN32_LEAN_AND_MEAN
-#include <Windows.h>
-#include "Window.h" // 제작한 Window 클래스 헤더
+#include <windows.h>
+#include <iostream>
+#include "Window.h" // 우리가 만든 Window.h 헤더
 
-/**
- * @brief Win32 애플리케이션의 주 진입점입니다.
- * @param hInstance 애플리케이션의 인스턴스 핸들입니다.
- * @param hPrevInstance 이전 인스턴스의 핸들입니다. (현재는 사용되지 않음)
- * @param lpCmdLine 커맨드 라인 인자입니다.
- * @param nCmdShow 창을 표시하는 방법을 지정합니다.
- * @return 애플리케이션 종료 코드입니다.
- */
+// Win32 GUI 애플리케이션에서 콘솔 창을 사용하기 위한 헬퍼 함수
+void CreateConsole()
+{
+	AllocConsole();
+	FILE* pFile;
+	freopen_s(&pFile, "CONOUT$", "w", stdout);
+	freopen_s(&pFile, "CONIN$", "r", stdin);
+	std::cout << "--- 이벤트 로그 콘솔 ---" << std::endl;
+}
+
+// 애플리케이션의 이벤트 처리 로직을 담당할 함수 (또는 람다)
+void OnEvent(Event& e)
+{
+	// 이벤트 메시지 종류에 따라 분기하여 처리합니다.
+	switch (e.uMsg)
+	{
+		case WM_KEYDOWN:
+		{
+			// wParam에 가상 키 코드가 담겨 옵니다.
+			unsigned char keyCode = static_cast<unsigned char>(e.wParam);
+			std::cout << "[Event] KeyDown: " << keyCode << std::endl;
+			break;
+		}
+		case WM_KEYUP:
+		{
+			unsigned char keyCode = static_cast<unsigned char>(e.wParam);
+			std::cout << "[Event] KeyUp: " << keyCode << std::endl;
+			break;
+		}
+		case WM_MOUSEMOVE:
+		{
+			// lParam에 마우스의 좌표가 담겨 옵니다.
+			int x = LOWORD(e.lParam);
+			int y = HIWORD(e.lParam);
+			std::cout << "[Event] MouseMove: (" << x << ", " << y << ")" << std::endl;
+			break;
+		}
+		case WM_LBUTTONDOWN:
+		{
+			std::cout << "[Event] LeftMouseButtonDown" << std::endl;
+			break;
+		}
+		case WM_CLOSE:
+		{
+			std::cout << "[Event] Window is closing..." << std::endl;
+			// 여기서 "저장하시겠습니까?" 같은 로직을 수행할 수 있습니다.
+			// 실제 종료는 Window 클래스의 WM_DESTROY에서 처리됩니다.
+			break;
+		}
+	}
+}
+
 int WINAPI WinMain(
 	_In_ HINSTANCE	   hInstance,
 	_In_opt_ HINSTANCE hPrevInstance,
 	_In_ LPSTR		   lpCmdLine,
 	_In_ int		   nCmdShow)
 {
-	// 1. Window 클래스 인스턴스 생성
-	// 생성자에 WinMain이 받은 인스턴스 핸들을 전달합니다.
-	Window myWindow(hInstance);
+	// 1. 디버깅 및 로그 출력을 위한 콘솔 창 생성
+	CreateConsole();
 
-	// 2. 윈도우 초기화
-	// Initialize 함수를 호출하여 실제 윈도우를 생성하고 화면에 표시합니다.
-	// 실패할 경우 -1을 반환하고 프로그램을 종료합니다.
-	if (!myWindow.Initialize(1280, 720, L"테스트 윈도우 - My Game Engine"))
+	// 2. Window 인스턴스 생성
+	Window window(hInstance); //
+
+	// 3. 이벤트 콜백 함수 등록
+	//    window.SetEventCallback을 사용하여 우리가 만든 OnEvent 함수를 "등록"합니다.
+	//    이제부터 window에서 발생하는 모든 이벤트는 OnEvent 함수로 전달됩니다.
+	window.SetEventCallback(OnEvent); //
+
+	// 4. 윈도우 초기화 및 생성
+	if (!window.Initialize(1280, 720, L"이벤트 테스트")) //
 	{
-		MessageBox(nullptr, L"Window 초기화 실패!", L"에러", MB_OK | MB_ICONERROR);
 		return -1;
 	}
 
-	// 3. 메인 루프 (게임 루프)
-	// ProcessMessages()가 false를 반환할 때까지 (즉, WM_QUIT 메시지를 받을 때까지)
-	// 루프를 계속 실행합니다.
-	bool isRunning = true;
-	while (isRunning)
+	// 5. 메인 루프 실행
+	//    ProcessMessages()는 WM_QUIT 메시지를 받을 때까지 true를 반환합니다.
+	while (window.ProcessMessages())
 	{
-		// 메시지 큐에 있는 모든 메시지를 처리합니다.
-		// false가 반환되면 루프를 종료합니다.
-		if (!myWindow.ProcessMessages())
-		{
-			isRunning = false;
-		}
-
-		// --- 게임 로직 업데이트는 여기에 ---
-		// (예: 플레이어 위치 업데이트, 충돌 감지 등)
-
-		// --- 렌더링 코드는 여기에 ---
-		// (예: 화면에 오브젝트 그리기)
+		// 게임 로직 및 렌더링 코드가 위치할 곳...
+		// 이 예제에서는 콜백 처리만 확인하므로 비워둡니다.
 	}
 
 	return 0;
