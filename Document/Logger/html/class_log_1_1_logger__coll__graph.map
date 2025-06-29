@@ -1,0 +1,3 @@
+<map id="Log::Logger" name="Log::Logger">
+<area shape="rect" id="Node000001" title="싱글턴 로거 클래스입니다. 파일 및 콜백으로 로그를 출력합니다." alt="" coords="5,5,160,309"/>
+</map>

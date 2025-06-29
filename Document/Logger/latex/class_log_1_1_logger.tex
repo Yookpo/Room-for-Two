@@ -1,0 +1,451 @@
+\doxysection{Log\+::Logger 클래스 참조}
+\hypertarget{class_log_1_1_logger}{}\label{class_log_1_1_logger}\index{Log::Logger@{Log::Logger}}
+
+
+싱글턴 로거 클래스입니다. 파일 및 콜백으로 로그를 출력합니다.  
+
+
+
+
+{\ttfamily \#include $<$Logger.\+h$>$}
+
+
+
+Log\+::Logger에 대한 협력 다이어그램\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_log_1_1_logger__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_log_1_1_logger_a6f9ed9c24db66c09cd4f7b0cf4f0e913}{\texorpdfstring{$\sim$}{\string~}\+Logger}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_log_1_1_logger}{Logger} 소멸자입니다. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_log_1_1_logger_a114ae91fb1310592446ba4e2ace7c762}{Initialize}} (const std\+::string \&output\+File)
+\begin{DoxyCompactList}\small\item\em 로거를 초기화합니다. 로그 파일을 열고 상태를 유효하게 설정합니다. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_log_1_1_logger_a0cc135f81f663184f5548d47ac2d7814}{Log}} (\mbox{\hyperlink{namespace_log_a91ffbf64c90bd159da8cd8f872d7ebea}{ELog\+Level}} level, const std\+::string \&category, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em 지정된 레벨과 카테고리로 로그 메시지를 기록합니다. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_log_1_1_logger_a1ca2186930627197427e795aa91690d6}{Register\+Callback}} (std\+::function$<$ void(const std\+::string \&)$>$ callback)
+\begin{DoxyCompactList}\small\item\em 로그 메시지가 생성될 때 호출될 콜백 함수를 등록합니다. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{class_log_1_1_logger_afd0ce818f7198225f6521d3ea7b1372c}{Register\+Callback}} (T \texorpdfstring{$\ast$}{*}ob, void(T\+::\texorpdfstring{$\ast$}{*}callback)(const std\+::string \&))
+\begin{DoxyCompactList}\small\item\em 특정 객체의 멤버 함수를 콜백으로 등록하기 위한 템플릿 헬퍼 함수입니다. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_log_1_1_logger_a1c1822d66a5f0eb86b539af5e52e6d0e}{Is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em 현재 로거가 유효한 상태인지(초기화되었는지) 확인합니다. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{정적 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_log_1_1_logger}{Logger}} \& \mbox{\hyperlink{class_log_1_1_logger_a2a67afade0f9c3c20a63b7d65fd8d536}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Logger의 유일한 인스턴스를 반환합니다. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_log_1_1_logger_aba457b540e11255a7e477ec7e2dd219d}{Logger}} ()
+\begin{DoxyCompactList}\small\item\em private 생성자 (싱글턴 패턴). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::function$<$ void(const std\+::string \&)$>$ $>$ \mbox{\hyperlink{class_log_1_1_logger_a2ecb1d8b4b92591454b475f3095e05a3}{Callback\+Vector}}
+\begin{DoxyCompactList}\small\item\em 등록된 콜백 함수들을 저장하는 벡터. \end{DoxyCompactList}\item 
+std\+::ofstream \mbox{\hyperlink{class_log_1_1_logger_ae3bb62f6276cffa8d5ff383d6623c1c9}{Ofstream}}
+\begin{DoxyCompactList}\small\item\em 로그 파일 출력을 위한 파일 스트림 객체. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespace_log_a91ffbf64c90bd159da8cd8f872d7ebea}{ELog\+Level}}, std\+::string $>$ \mbox{\hyperlink{class_log_1_1_logger_a24564985683c1647977475630befedf2}{To\+Log\+Level\+String\+Table}}
+\begin{DoxyCompactList}\small\item\em \doxylink{namespace_log_a91ffbf64c90bd159da8cd8f872d7ebea}{ELog\+Level} 열거형을 문자열로 변환하기 위한 매핑 테이블. \end{DoxyCompactList}\item 
+std\+::mutex \mbox{\hyperlink{class_log_1_1_logger_afe858da280d12dcb6dae1a49ba1e5083}{Log\+Mutex}}
+\begin{DoxyCompactList}\small\item\em \doxylink{namespace_log}{Log()} 함수 내부의 동기화를 위한 뮤텍스 객체. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_log_1_1_logger_ad8f90ad4c86e91dae51d4070ca8407c0}{Valid\+State}}
+\begin{DoxyCompactList}\small\item\em 로거의 현재 상태 (Initialize가 성공적으로 호출되었는지 여부). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+싱글턴 로거 클래스입니다. 파일 및 콜백으로 로그를 출력합니다. 
+
+\begin{DoxyWarning}{경고}
+이 클래스는 싱글턴이므로, 사용하기 전에 반드시 \doxylink{class_log_1_1_logger_a114ae91fb1310592446ba4e2ace7c762}{Initialize()} 함수를 호출하여 초기화해야 합니다. 
+\end{DoxyWarning}
+\begin{DoxyNote}{주의}
+\doxylink{namespace_log}{Log()} 함수는 뮤텍스를 통해 스레드에 안전하게(thread-\/safe) 설계되었습니다. 
+\end{DoxyNote}
+
+
+\mbox{\hyperlink{_logger_8h_source}{Logger.\+h}} 파일의 \mbox{\hyperlink{_logger_8h_source_l00039}{39}} 번째 라인에서 정의되었습니다.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_log_1_1_logger_doc-constructors}
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_log_1_1_logger_a6f9ed9c24db66c09cd4f7b0cf4f0e913}\index{Log::Logger@{Log::Logger}!````~Logger@{\texorpdfstring{$\sim$}{\string~}Logger}}
+\index{````~Logger@{\texorpdfstring{$\sim$}{\string~}Logger}!Log::Logger@{Log::Logger}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Logger()}{\string~Logger()}}
+{\footnotesize\ttfamily \label{class_log_1_1_logger_a6f9ed9c24db66c09cd4f7b0cf4f0e913} 
+Log\+::\+Logger\+::\texorpdfstring{$\sim$}{\string~}\+Logger (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_log_1_1_logger}{Logger} 소멸자입니다. 
+
+열려 있는 로그 파일을 닫습니다. 
+
+\mbox{\hyperlink{_logger_8cpp_source}{Logger.\+cpp}} 파일의 \mbox{\hyperlink{_logger_8cpp_source_l00046}{46}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_log_1_1_logger_aba457b540e11255a7e477ec7e2dd219d}\index{Log::Logger@{Log::Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!Log::Logger@{Log::Logger}}
+\doxysubsubsection{\texorpdfstring{Logger()}{Logger()}}
+{\footnotesize\ttfamily \label{class_log_1_1_logger_aba457b540e11255a7e477ec7e2dd219d} 
+Log\+::\+Logger\+::\+Logger (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+private 생성자 (싱글턴 패턴). 
+
+
+
+\mbox{\hyperlink{_logger_8cpp_source}{Logger.\+cpp}} 파일의 \mbox{\hyperlink{_logger_8cpp_source_l00028}{28}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ :\ \mbox{\hyperlink{class_log_1_1_logger_ad8f90ad4c86e91dae51d4070ca8407c0}{ValidState}}(\textcolor{keyword}{false}) }
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_log_1_1_logger_a24564985683c1647977475630befedf2}{ToLogLevelStringTable}}[\mbox{\hyperlink{namespace_log_a91ffbf64c90bd159da8cd8f872d7ebeaa0eaadb4fcb48a0a0ed7bc9868be9fbaa}{ELogLevel::Warning}}]\ =\ \textcolor{stringliteral}{"{}[Warning]"{}};}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_log_1_1_logger_a24564985683c1647977475630befedf2}{ToLogLevelStringTable}}[\mbox{\hyperlink{namespace_log_a91ffbf64c90bd159da8cd8f872d7ebeaa902b0d55fddef6f8d651fe1035b7d4bd}{ELogLevel::Error}}]\ =\ \textcolor{stringliteral}{"{}[Error]"{}};}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_log_1_1_logger_a24564985683c1647977475630befedf2}{ToLogLevelStringTable}}[\mbox{\hyperlink{namespace_log_a91ffbf64c90bd159da8cd8f872d7ebeaa278d01e5af56273bae1bb99a98b370cd}{ELogLevel::Critical}}]\ =\ \textcolor{stringliteral}{"{}[Critical]"{}};}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_log_1_1_logger_a24564985683c1647977475630befedf2}{ToLogLevelStringTable}}[\mbox{\hyperlink{namespace_log_a91ffbf64c90bd159da8cd8f872d7ebeaa4059b0251f66a18cb56f544728796875}{ELogLevel::Info}}]\ =\ \textcolor{stringliteral}{"{}[Info]"{}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_log_1_1_logger_aba457b540e11255a7e477ec7e2dd219d_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_log_1_1_logger_doc-func-members}
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_log_1_1_logger_a2a67afade0f9c3c20a63b7d65fd8d536}\index{Log::Logger@{Log::Logger}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!Log::Logger@{Log::Logger}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \label{class_log_1_1_logger_a2a67afade0f9c3c20a63b7d65fd8d536} 
+\mbox{\hyperlink{class_log_1_1_logger}{Log\+::\+Logger}} \& Log\+::\+Logger\+::\+Get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Logger의 유일한 인스턴스를 반환합니다. 
+
+\begin{DoxyReturn}{반환값}
+\doxylink{class_log_1_1_logger}{Logger} 클래스의 싱글턴 인스턴스에 대한 참조. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{_logger_8cpp_source}{Logger.\+cpp}} 파일의 \mbox{\hyperlink{_logger_8cpp_source_l00039}{39}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_log_1_1_logger_aba457b540e11255a7e477ec7e2dd219d}{Logger}}\ log;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ log;}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_log_1_1_logger_a2a67afade0f9c3c20a63b7d65fd8d536_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_log_1_1_logger_a114ae91fb1310592446ba4e2ace7c762}\index{Log::Logger@{Log::Logger}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Log::Logger@{Log::Logger}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{class_log_1_1_logger_a114ae91fb1310592446ba4e2ace7c762} 
+bool Log\+::\+Logger\+::\+Initialize (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{output\+File}{}\end{DoxyParamCaption})}
+
+
+
+로거를 초기화합니다. 로그 파일을 열고 상태를 유효하게 설정합니다. 
+
+이 함수는 로깅을 시작하기 전에 단 한 번만 호출되어야 합니다. 
+\begin{DoxyParams}[1]{매개변수}
+\mbox{\texttt{in}}  & {\em output\+File} & 로그를 기록할 파일의 경로. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+초기화에 성공하면 true, 실패하면(파일 열기 실패 등) false를 반환합니다. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{_logger_8cpp_source}{Logger.\+cpp}} 파일의 \mbox{\hyperlink{_logger_8cpp_source_l00052}{52}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//스레드\ 안정성\ 확보할것}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{class_log_1_1_logger_ae3bb62f6276cffa8d5ff383d6623c1c9}{Ofstream}}.open(outputFile);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_log_1_1_logger_ae3bb62f6276cffa8d5ff383d6623c1c9}{Ofstream}}.is\_open())}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//파일열기실패;}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_log_1_1_logger_ad8f90ad4c86e91dae51d4070ca8407c0}{ValidState}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00064\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_log_1_1_logger_a1c1822d66a5f0eb86b539af5e52e6d0e}\index{Log::Logger@{Log::Logger}!IsValid@{IsValid}}
+\index{IsValid@{IsValid}!Log::Logger@{Log::Logger}}
+\doxysubsubsection{\texorpdfstring{IsValid()}{IsValid()}}
+{\footnotesize\ttfamily \label{class_log_1_1_logger_a1c1822d66a5f0eb86b539af5e52e6d0e} 
+bool Log\+::\+Logger\+::\+Is\+Valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+현재 로거가 유효한 상태인지(초기화되었는지) 확인합니다. 
+
+\begin{DoxyReturn}{반환값}
+로거가 유효하면 true, 그렇지 않으면 false를 반환합니다. 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{_logger_8cpp_source}{Logger.\+cpp}} 파일의 \mbox{\hyperlink{_logger_8cpp_source_l00023}{23}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_log_1_1_logger_ad8f90ad4c86e91dae51d4070ca8407c0}{ValidState}};}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_log_1_1_logger_a0cc135f81f663184f5548d47ac2d7814}\index{Log::Logger@{Log::Logger}!Log@{Log}}
+\index{Log@{Log}!Log::Logger@{Log::Logger}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}}
+{\footnotesize\ttfamily \label{class_log_1_1_logger_a0cc135f81f663184f5548d47ac2d7814} 
+void Log\+::\+Logger\+::\+Log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_log_a91ffbf64c90bd159da8cd8f872d7ebea}{ELog\+Level}}}]{level}{, }\item[{const std\+::string \&}]{category}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+지정된 레벨과 카테고리로 로그 메시지를 기록합니다. 
+
+이 함수는 스레드에 안전합니다.
+
+\mbox{[}level\mbox{]}\mbox{[}category\mbox{]}\+:message 형태로 메시지를 기록합니다. 
+\begin{DoxyParams}[1]{매개변수}
+\mbox{\texttt{in}}  & {\em level} & 로그의 심각도 수준 (\doxylink{namespace_log_a91ffbf64c90bd159da8cd8f872d7ebea}{ELog\+Level}). \\
+\hline
+\mbox{\texttt{in}}  & {\em category} & 로그의 분류 (예\+: "{}\+Network"{}, "{}\+Renderer"{}). \\
+\hline
+\mbox{\texttt{in}}  & {\em message} & 기록할 실제 로그 내용. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{_logger_8cpp_source}{Logger.\+cpp}} 파일의 \mbox{\hyperlink{_logger_8cpp_source_l00066}{66}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ std::stringstream\ log;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ log\ <<\ \mbox{\hyperlink{class_log_1_1_logger_a24564985683c1647977475630befedf2}{ToLogLevelStringTable}}[level]\ <<\ \textcolor{stringliteral}{"{}["{}}\ <<\ category\ <<\textcolor{stringliteral}{"{}]"{}}\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ message\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock\_guard(\mbox{\hyperlink{class_log_1_1_logger_afe858da280d12dcb6dae1a49ba1e5083}{LogMutex}});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_log_1_1_logger_ae3bb62f6276cffa8d5ff383d6623c1c9}{Ofstream}}.write(log.str().c\_str(),\ log.str().size());}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ callback\ :\ \mbox{\hyperlink{class_log_1_1_logger_a2ecb1d8b4b92591454b475f3095e05a3}{CallbackVector}})}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ callback(log.str());}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_log_1_1_logger_a1ca2186930627197427e795aa91690d6}\index{Log::Logger@{Log::Logger}!RegisterCallback@{RegisterCallback}}
+\index{RegisterCallback@{RegisterCallback}!Log::Logger@{Log::Logger}}
+\doxysubsubsection{\texorpdfstring{RegisterCallback()}{RegisterCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_log_1_1_logger_a1ca2186930627197427e795aa91690d6} 
+void Log\+::\+Logger\+::\+Register\+Callback (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(const std\+::string \&)$>$}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+로그 메시지가 생성될 때 호출될 콜백 함수를 등록합니다. 
+
+UI 업데이트나 다른 로깅 시스템으로 로그를 전달할 때 유용합니다. 
+\begin{DoxyParams}[1]{매개변수}
+\mbox{\texttt{in}}  & {\em callback} & std\+::function 형태의 콜백 함수. 포맷팅된 로그 문자열을 인자로 받습니다. \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{_logger_8cpp_source}{Logger.\+cpp}} 파일의 \mbox{\hyperlink{_logger_8cpp_source_l00013}{13}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock\_guard(\mbox{\hyperlink{class_log_1_1_logger_afe858da280d12dcb6dae1a49ba1e5083}{LogMutex}});}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_log_1_1_logger_a2ecb1d8b4b92591454b475f3095e05a3}{CallbackVector}}.push\_back(std::move(callback));}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_log_1_1_logger_a1ca2186930627197427e795aa91690d6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_log_1_1_logger_afd0ce818f7198225f6521d3ea7b1372c}\index{Log::Logger@{Log::Logger}!RegisterCallback@{RegisterCallback}}
+\index{RegisterCallback@{RegisterCallback}!Log::Logger@{Log::Logger}}
+\doxysubsubsection{\texorpdfstring{RegisterCallback()}{RegisterCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_log_1_1_logger_afd0ce818f7198225f6521d3ea7b1372c} 
+template$<$typename T$>$ \\
+void Log\+::\+Logger\+::\+Register\+Callback (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{ob}{, }\item[{void(T\+::\texorpdfstring{$\ast$}{*}}]{callback~}{)(const std\+::string \&)}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+특정 객체의 멤버 함수를 콜백으로 등록하기 위한 템플릿 헬퍼 함수입니다. 
+
+멤버 함수 포인터를 std\+::function으로 변환하여 콜백 벡터에 등록합니다.
+
+
+\begin{DoxyTemplParams}{템플릿 파라메터}
+{\em T} & 콜백 멤버 함수를 소유한 객체의 클래스 타입. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{매개변수}
+\mbox{\texttt{in}}  & {\em ob} & 콜백을 호출할 객체의 포인터. \\
+\hline
+\mbox{\texttt{in}}  & {\em callback} & 등록할 멤버 함수 포인터.\\
+\hline
+\end{DoxyParams}
+std\+::bind를 사용하여 멤버 함수와 객체 인스턴스를 바인딩합니다. static\+\_\+assert를 통해 T가 반드시 클래스 타입인지 컴파일 타임에 확인합니다. 
+
+\mbox{\hyperlink{_logger_8h_source}{Logger.\+h}} 파일의 \mbox{\hyperlink{_logger_8h_source_l00122}{122}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_class\_v<T>,\ \textcolor{stringliteral}{"{}T는\ 반드시\ 클래스\ 타입이어야합니다."{}});}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_log_1_1_logger_a1ca2186930627197427e795aa91690d6}{RegisterCallback}}(std::bind(callback,\ ob,\ std::placeholders::\_1));}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_log_1_1_logger_afd0ce818f7198225f6521d3ea7b1372c_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_log_1_1_logger_doc-variable-members}
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_log_1_1_logger_a2ecb1d8b4b92591454b475f3095e05a3}\index{Log::Logger@{Log::Logger}!CallbackVector@{CallbackVector}}
+\index{CallbackVector@{CallbackVector}!Log::Logger@{Log::Logger}}
+\doxysubsubsection{\texorpdfstring{CallbackVector}{CallbackVector}}
+{\footnotesize\ttfamily \label{class_log_1_1_logger_a2ecb1d8b4b92591454b475f3095e05a3} 
+std\+::vector$<$std\+::function$<$void(const std\+::string\&)$>$ $>$ Log\+::\+Logger\+::\+Callback\+Vector\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+등록된 콜백 함수들을 저장하는 벡터. 
+
+
+
+\mbox{\hyperlink{_logger_8h_source}{Logger.\+h}} 파일의 \mbox{\hyperlink{_logger_8h_source_l00101}{101}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_log_1_1_logger_afe858da280d12dcb6dae1a49ba1e5083}\index{Log::Logger@{Log::Logger}!LogMutex@{LogMutex}}
+\index{LogMutex@{LogMutex}!Log::Logger@{Log::Logger}}
+\doxysubsubsection{\texorpdfstring{LogMutex}{LogMutex}}
+{\footnotesize\ttfamily \label{class_log_1_1_logger_afe858da280d12dcb6dae1a49ba1e5083} 
+std\+::mutex Log\+::\+Logger\+::\+Log\+Mutex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{namespace_log}{Log()} 함수 내부의 동기화를 위한 뮤텍스 객체. 
+
+
+
+\mbox{\hyperlink{_logger_8h_source}{Logger.\+h}} 파일의 \mbox{\hyperlink{_logger_8h_source_l00110}{110}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_log_1_1_logger_ae3bb62f6276cffa8d5ff383d6623c1c9}\index{Log::Logger@{Log::Logger}!Ofstream@{Ofstream}}
+\index{Ofstream@{Ofstream}!Log::Logger@{Log::Logger}}
+\doxysubsubsection{\texorpdfstring{Ofstream}{Ofstream}}
+{\footnotesize\ttfamily \label{class_log_1_1_logger_ae3bb62f6276cffa8d5ff383d6623c1c9} 
+std\+::ofstream Log\+::\+Logger\+::\+Ofstream\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+로그 파일 출력을 위한 파일 스트림 객체. 
+
+
+
+\mbox{\hyperlink{_logger_8h_source}{Logger.\+h}} 파일의 \mbox{\hyperlink{_logger_8h_source_l00104}{104}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_log_1_1_logger_a24564985683c1647977475630befedf2}\index{Log::Logger@{Log::Logger}!ToLogLevelStringTable@{ToLogLevelStringTable}}
+\index{ToLogLevelStringTable@{ToLogLevelStringTable}!Log::Logger@{Log::Logger}}
+\doxysubsubsection{\texorpdfstring{ToLogLevelStringTable}{ToLogLevelStringTable}}
+{\footnotesize\ttfamily \label{class_log_1_1_logger_a24564985683c1647977475630befedf2} 
+std\+::unordered\+\_\+map$<$\mbox{\hyperlink{namespace_log_a91ffbf64c90bd159da8cd8f872d7ebea}{ELog\+Level}}, std\+::string$>$ Log\+::\+Logger\+::\+To\+Log\+Level\+String\+Table\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{namespace_log_a91ffbf64c90bd159da8cd8f872d7ebea}{ELog\+Level} 열거형을 문자열로 변환하기 위한 매핑 테이블. 
+
+
+
+\mbox{\hyperlink{_logger_8h_source}{Logger.\+h}} 파일의 \mbox{\hyperlink{_logger_8h_source_l00107}{107}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_log_1_1_logger_ad8f90ad4c86e91dae51d4070ca8407c0}\index{Log::Logger@{Log::Logger}!ValidState@{ValidState}}
+\index{ValidState@{ValidState}!Log::Logger@{Log::Logger}}
+\doxysubsubsection{\texorpdfstring{ValidState}{ValidState}}
+{\footnotesize\ttfamily \label{class_log_1_1_logger_ad8f90ad4c86e91dae51d4070ca8407c0} 
+bool Log\+::\+Logger\+::\+Valid\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+로거의 현재 상태 (Initialize가 성공적으로 호출되었는지 여부). 
+
+
+
+\mbox{\hyperlink{_logger_8h_source}{Logger.\+h}} 파일의 \mbox{\hyperlink{_logger_8h_source_l00113}{113}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/dongd/source/repos/\+Room-\/for-\/\+Two/\+Room-\/\+For-\/\+Two/\+Logger/\mbox{\hyperlink{_logger_8h}{Logger.\+h}}\item 
+C\+:/\+Users/dongd/source/repos/\+Room-\/for-\/\+Two/\+Room-\/\+For-\/\+Two/\+Logger/\mbox{\hyperlink{_logger_8cpp}{Logger.\+cpp}}\end{DoxyCompactItemize}
